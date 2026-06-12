@@ -80,6 +80,8 @@
 
   .contact p{margin:0 0 22px;color:var(--muted)}
   .mail{font-family:var(--serif);font-size:22px;color:var(--navy)}
+  .form-embed iframe{width:100%;height:1365px;border:0;display:block}
+  .form-fallback{font-size:13.5px;color:var(--muted);margin-top:16px}
 
   footer{padding:34px 0;text-align:center;color:var(--muted);font-size:13px}
   .small{font-size:13px;color:var(--muted)}
@@ -89,6 +91,7 @@
     .headshot{width:120px;height:144px}
     .hero{padding:60px 0 48px}
     section{padding:48px 0}
+    .form-embed iframe{height:1650px}
   }
 </style>
 </head>
@@ -193,7 +196,7 @@
         <tr><th>Founded</th><td>August 2025</td></tr>
         <tr><th>Address</th><td>85-2 Koinari-cho, Shimogyo-ku, Kyoto 600-8208, Japan<br>(Grand-K Kyoto Ekimae Bldg. 201)</td></tr>
         <tr><th>Business</th><td>AI consulting · research and real-world deployment of mathematical models</td></tr>
-        <tr><th>Contact</th><td><a href="mailto:hiroto@atoinc.jp">hiroto@atoinc.jp</a></td></tr>
+        <tr><th>Contact</th><td><a href="#contact">Contact form</a></td></tr>
       </table>
     </div>
   </section>
@@ -201,15 +204,18 @@
   <section id="contact" class="sec-soft">
     <div class="wrap contact">
       <h2>Contact</h2>
-      <p>For AI advisory or a technical-advisor engagement, please reach out by email.</p>
-      <p><a class="mail" href="mailto:hiroto@atoinc.jp">hiroto@atoinc.jp</a></p>
-      <p style="margin-top:24px"><a class="cta" href="mailto:hiroto@atoinc.jp?subject=AI%20advisory%20inquiry">Email me</a></p>
+      <p>Please get in touch using the form below. (The form is in Japanese.)</p>
+      <div class="form-embed">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdoWGJpNNHRiP2pkGjrFq95xTIB309OFkMzCyQO3bqQtxxP5Q/viewform?embedded=true" title="Contact form" loading="lazy">Loading…</iframe>
+      </div>
+      <p class="form-fallback">If the form does not load, <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoWGJpNNHRiP2pkGjrFq95xTIB309OFkMzCyQO3bqQtxxP5Q/viewform" target="_blank" rel="noopener">open it here</a>.</p>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="wrap">
+    <p class="small"><a href="privacy-en.html">Privacy Policy</a></p>
     <p class="small">© 2026 Ato Inc.</p>
   </div>
 </footer>
