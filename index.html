@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>株式会社アト｜専属の社外AI責任者</title>
+<meta name="description" content="特定のベンダーに属さず、御社の立場に立って最適なAI活用を設計し、“入れて終わりにしない”仕組みを実現します。株式会社アト 代表取締役・赤塚裕人（博士／京都橘大学 准教授 2027年4月就任予定／元NTTドコモ）。">
+<meta property="og:title" content="株式会社アト｜専属の社外AI責任者">
+<meta property="og:description" content="特定のベンダーに属さず、御社の立場に立って最適なAI活用を設計し、“入れて終わりにしない”仕組みを実現します。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://atoinc.jp/">
+<meta property="og:locale" content="ja_JP">
+<link rel="canonical" href="https://atoinc.jp/">
+<style>
+  :root{
+    --ink:#1a1f29; --navy:#1b2c4b; --muted:#5b6472;
+    --line:#e3e6ec; --bg:#ffffff; --bg-soft:#f6f7f9; --gold:#b08d4f;
+    --serif:"Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif JP",serif;
+    --sans:"Yu Gothic","YuGothic","Hiragino Kaku Gothic ProN","Noto Sans JP","Meiryo",sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;color:var(--ink);background:var(--bg);font-family:var(--sans);
+       line-height:1.8;font-size:16px;-webkit-font-smoothing:antialiased;}
+  a{color:var(--navy);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px}
+
+  /* header */
+  header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);
+         backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;
+       padding:14px 24px;max-width:880px;margin:0 auto;gap:16px;flex-wrap:wrap}
+  .brand{font-family:var(--serif);font-size:18px;letter-spacing:.06em;color:var(--ink);font-weight:600}
+  .menu{display:flex;gap:18px;align-items:center;font-size:13.5px;flex-wrap:wrap}
+  .menu a{color:var(--muted)}
+  .menu .lang{border:1px solid var(--line);border-radius:4px;padding:2px 8px;color:var(--ink)}
+
+  /* hero */
+  .hero{padding:84px 0 64px;border-bottom:1px solid var(--line)}
+  .kicker{font-size:13px;letter-spacing:.18em;color:var(--gold);font-weight:600;margin:0 0 18px}
+  .hero h1{font-family:var(--serif);font-size:clamp(30px,6vw,46px);line-height:1.3;
+           margin:0 0 24px;font-weight:600;letter-spacing:.02em}
+  .lead{font-size:clamp(16px,2.4vw,19px);color:var(--ink);max-width:680px;margin:0}
+  .cta{margin-top:34px;display:inline-block;background:var(--navy);color:#fff;
+       padding:13px 28px;border-radius:6px;font-size:15px;letter-spacing:.04em}
+  .cta:hover{text-decoration:none;opacity:.92}
+
+  /* sections */
+  section{padding:64px 0;border-bottom:1px solid var(--line)}
+  .sec-soft{background:var(--bg-soft)}
+  h2{font-family:var(--serif);font-size:25px;font-weight:600;margin:0 0 28px;
+     letter-spacing:.04em;position:relative;padding-bottom:12px}
+  h2::after{content:"";position:absolute;left:0;bottom:0;width:46px;height:2px;background:var(--gold)}
+
+  .sit{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+  .sit li{position:relative;padding-left:26px;color:var(--ink)}
+  .sit li::before{content:"";position:absolute;left:4px;top:13px;width:7px;height:7px;
+                  background:var(--navy);border-radius:50%}
+
+  .svc{display:grid;gap:22px}
+  .svc .item{border-left:3px solid var(--navy);padding:4px 0 4px 18px}
+  .svc .t{font-weight:700;color:var(--ink);margin:0 0 4px;font-size:16.5px}
+  .svc .d{color:var(--muted);margin:0;font-size:14.5px}
+
+  /* profile */
+  .profile{display:grid;grid-template-columns:140px 1fr;gap:32px;align-items:start}
+  .headshot{width:140px;height:168px;border-radius:8px;background:#e9ecf1 center/cover no-repeat;
+            background-image:url('profile.jpg');border:1px solid var(--line);
+            display:flex;align-items:flex-end;justify-content:center;color:#9aa3b2;
+            font-size:12px;letter-spacing:.1em;padding-bottom:10px}
+  .cred{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+  .cred li{padding-left:20px;position:relative}
+  .cred li::before{content:"—";position:absolute;left:0;color:var(--gold)}
+  .cred .sum{font-family:var(--serif);color:var(--navy);font-weight:600}
+
+  .eng{display:flex;flex-wrap:wrap;gap:12px;margin:0;padding:0;list-style:none}
+  .eng li{border:1px solid var(--line);border-radius:6px;padding:14px 22px;
+          font-weight:600;background:#fff}
+
+  table.company{width:100%;border-collapse:collapse;font-size:15px}
+  table.company th,table.company td{text-align:left;vertical-align:top;
+       padding:13px 12px;border-bottom:1px solid var(--line)}
+  table.company th{width:120px;color:var(--muted);font-weight:600;white-space:nowrap}
+
+  .contact p{margin:0 0 22px;color:var(--muted)}
+  .mail{font-family:var(--serif);font-size:22px;color:var(--navy)}
+
+  footer{padding:34px 0;text-align:center;color:var(--muted);font-size:13px}
+  .small{font-size:13px;color:var(--muted)}
+
+  @media(max-width:640px){
+    .profile{grid-template-columns:1fr;justify-items:start}
+    .headshot{width:120px;height:144px}
+    .hero{padding:60px 0 48px}
+    section{padding:48px 0}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">株式会社アト</div>
+    <nav class="menu">
+      <a href="#services">サービス</a>
+      <a href="#profile">プロフィール</a>
+      <a href="#company">会社概要</a>
+      <a href="#contact">お問い合わせ</a>
+      <a class="lang" href="en.html">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap">
+      <p class="kicker">FRACTIONAL CAIO</p>
+      <h1>専属の社外AI責任者</h1>
+      <p class="lead">特定のベンダーに属さず、御社の立場に立って最適なAI活用を設計し、<br>“入れて終わりにしない”仕組みを実現します。</p>
+      <a class="cta" href="#contact">ご相談はこちら</a>
+    </div>
+  </div>
+
+  <!-- 状況 -->
+  <section id="situations">
+    <div class="wrap">
+      <h2>こんな状況に</h2>
+      <ul class="sit">
+        <li>AI活用を進めたいが、<strong>どこに・何のために入れ、どう効果を測るか</strong>が定まらない</li>
+        <li>PoCはやったが<strong>本番に乗らない</strong>／担当者が変わって<strong>続かない</strong></li>
+        <li>ベンダー提案が<strong>技術的に妥当か、社内で判断できる人がいない</strong></li>
+        <li>機密データをAIに出せず止まっている</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- できること -->
+  <section id="services" class="sec-soft">
+    <div class="wrap">
+      <h2>できること</h2>
+      <div class="svc">
+        <div class="item">
+          <p class="t">生成AIを含むAI活用・業務改善の設計</p>
+          <p class="d">どこに／何のために入れ、効果測定、人の判断をどこに残すかまで言語化して設計します。</p>
+        </div>
+        <div class="item">
+          <p class="t">機密・個人データをAIで安全に使う設計（データガバナンス）</p>
+          <p class="d">どのデータを・どのAI（クラウド／オンプレ／API）に・どの範囲で使ってよいかの線引き、マスキング・アクセス制御まで。</p>
+        </div>
+        <div class="item">
+          <p class="t">個人を守るデータ分析・公開（プライバシー保護）</p>
+          <p class="d">差分プライバシー等で、個人を特定させずに統計・モデルを作り、外部提供・公開します。</p>
+        </div>
+        <div class="item">
+          <p class="t">交通・人流・需要などのデータに基づく予測・最適化</p>
+          <p class="d">大規模データから、実運用に乗る予測・最適化の仕組みを設計します。</p>
+        </div>
+        <div class="item">
+          <p class="t">御社側に立つ技術アドバイザー</p>
+          <p class="d">ベンダー選定・交渉に立ち会い、提案が技術的に妥当かを見極めます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- プロフィール（QR着地点） -->
+  <section id="profile">
+    <div class="wrap">
+      <h2>赤塚 裕人 — なぜ私か</h2>
+      <div class="profile">
+        <div class="headshot" role="img" aria-label="赤塚 裕人"></div>
+        <ul class="cred">
+          <li><strong>博士（情報理工学・東京大学）</strong> ／ MENSA 会員</li>
+          <li><strong>京都橘大学 准教授</strong>（2027年4月就任予定）</li>
+          <li><strong>元NTTドコモ（2013–2025）</strong>：モバイル空間統計のリアルタイム版・AI渋滞予知を、研究開発から全国規模の社会実装まで主導</li>
+          <li><strong>文部科学大臣表彰（科学技術分野）</strong> ／ 前島密賞 ／ 情報処理学会 業績賞</li>
+          <li class="sum">＝研究で終わらせず、社会実装まで通した実績</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 関わり方 -->
+  <section id="engagement" class="sec-soft">
+    <div class="wrap">
+      <h2>関わり方</h2>
+      <ul class="eng">
+        <li>月額技術顧問</li>
+        <li>スポット相談</li>
+        <li>プロジェクト単位</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 会社概要 -->
+  <section id="company">
+    <div class="wrap">
+      <h2>会社概要</h2>
+      <table class="company">
+        <tr><th>社名</th><td>株式会社アト（Ato Inc.）</td></tr>
+        <tr><th>代表者</th><td>代表取締役　赤塚 裕人</td></tr>
+        <tr><th>設立</th><td>2025年8月</td></tr>
+        <tr><th>所在地</th><td>〒600-8208　京都府京都市下京区小稲荷町 85-2　Grand-K 京都駅前ビル 201</td></tr>
+        <tr><th>事業内容</th><td>AI活用コンサルティング／数理モデルの研究開発・社会実装</td></tr>
+        <tr><th>連絡先</th><td><a href="mailto:hiroto@atoinc.jp">hiroto@atoinc.jp</a></td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- お問い合わせ -->
+  <section id="contact" class="sec-soft">
+    <div class="wrap contact">
+      <h2>お問い合わせ</h2>
+      <p>AI活用のご相談・技術アドバイザーのご依頼は、メールにてお気軽にご連絡ください。</p>
+      <p><a class="mail" href="mailto:hiroto@atoinc.jp">hiroto@atoinc.jp</a></p>
+      <p style="margin-top:24px"><a class="cta" href="mailto:hiroto@atoinc.jp?subject=AI活用のご相談">メールで相談する</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="small">© 2026 株式会社アト（Ato Inc.）</p>
+  </div>
+</footer>
+
+</body>
+</html>

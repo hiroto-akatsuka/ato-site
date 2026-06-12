@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ato Inc. | Fractional CAIO</title>
+<meta name="description" content="Vendor-independent. I design the AI approach that fits your business — and make sure it lasts beyond the initial rollout. Dr. Hiroto Akatsuka, CEO of Ato Inc.">
+<meta property="og:title" content="Ato Inc. | Fractional CAIO">
+<meta property="og:description" content="Vendor-independent. I design the AI approach that fits your business — and make sure it lasts beyond the initial rollout.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://atoinc.jp/en.html">
+<meta property="og:locale" content="en_US">
+<link rel="canonical" href="https://atoinc.jp/en.html">
+<style>
+  :root{
+    --ink:#1a1f29; --navy:#1b2c4b; --muted:#5b6472;
+    --line:#e3e6ec; --bg:#ffffff; --bg-soft:#f6f7f9; --gold:#b08d4f;
+    --serif:Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;color:var(--ink);background:var(--bg);font-family:var(--sans);
+       line-height:1.75;font-size:16px;-webkit-font-smoothing:antialiased;}
+  a{color:var(--navy);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px}
+
+  header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);
+         backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;
+       padding:14px 24px;max-width:880px;margin:0 auto;gap:16px;flex-wrap:wrap}
+  .brand{font-family:var(--serif);font-size:18px;letter-spacing:.04em;color:var(--ink);font-weight:600}
+  .menu{display:flex;gap:18px;align-items:center;font-size:13.5px;flex-wrap:wrap}
+  .menu a{color:var(--muted)}
+  .menu .lang{border:1px solid var(--line);border-radius:4px;padding:2px 8px;color:var(--ink)}
+
+  .hero{padding:84px 0 64px;border-bottom:1px solid var(--line)}
+  .kicker{font-size:13px;letter-spacing:.18em;color:var(--gold);font-weight:600;margin:0 0 18px}
+  .hero h1{font-family:var(--serif);font-size:clamp(30px,6vw,46px);line-height:1.25;
+           margin:0 0 22px;font-weight:600}
+  .lead{font-size:clamp(16px,2.4vw,19px);color:var(--ink);max-width:680px;margin:0;font-style:italic}
+  .cta{margin-top:34px;display:inline-block;background:var(--navy);color:#fff;
+       padding:13px 28px;border-radius:6px;font-size:15px;letter-spacing:.03em;font-style:normal}
+  .cta:hover{text-decoration:none;opacity:.92}
+
+  section{padding:64px 0;border-bottom:1px solid var(--line)}
+  .sec-soft{background:var(--bg-soft)}
+  h2{font-family:var(--serif);font-size:25px;font-weight:600;margin:0 0 28px;
+     position:relative;padding-bottom:12px}
+  h2::after{content:"";position:absolute;left:0;bottom:0;width:46px;height:2px;background:var(--gold)}
+
+  .sit{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+  .sit li{position:relative;padding-left:26px}
+  .sit li::before{content:"";position:absolute;left:4px;top:12px;width:7px;height:7px;
+                  background:var(--navy);border-radius:50%}
+
+  .svc{display:grid;gap:22px}
+  .svc .item{border-left:3px solid var(--navy);padding:4px 0 4px 18px}
+  .svc .t{font-weight:700;margin:0 0 4px;font-size:16.5px}
+  .svc .d{color:var(--muted);margin:0;font-size:14.5px}
+
+  .profile{display:grid;grid-template-columns:140px 1fr;gap:32px;align-items:start}
+  .headshot{width:140px;height:168px;border-radius:8px;background:#e9ecf1 center/cover no-repeat;
+            background-image:url('profile.jpg');border:1px solid var(--line);
+            display:flex;align-items:flex-end;justify-content:center;color:#9aa3b2;
+            font-size:12px;letter-spacing:.1em;padding-bottom:10px}
+  .cred{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+  .cred li{padding-left:20px;position:relative}
+  .cred li::before{content:"—";position:absolute;left:0;color:var(--gold)}
+  .cred .sum{font-family:var(--serif);color:var(--navy);font-weight:600;font-style:italic}
+
+  .eng{display:flex;flex-wrap:wrap;gap:12px;margin:0;padding:0;list-style:none}
+  .eng li{border:1px solid var(--line);border-radius:6px;padding:14px 22px;font-weight:600;background:#fff}
+
+  table.company{width:100%;border-collapse:collapse;font-size:15px}
+  table.company th,table.company td{text-align:left;vertical-align:top;
+       padding:13px 12px;border-bottom:1px solid var(--line)}
+  table.company th{width:130px;color:var(--muted);font-weight:600;white-space:nowrap}
+
+  .contact p{margin:0 0 22px;color:var(--muted)}
+  .mail{font-family:var(--serif);font-size:22px;color:var(--navy)}
+
+  footer{padding:34px 0;text-align:center;color:var(--muted);font-size:13px}
+  .small{font-size:13px;color:var(--muted)}
+
+  @media(max-width:640px){
+    .profile{grid-template-columns:1fr;justify-items:start}
+    .headshot{width:120px;height:144px}
+    .hero{padding:60px 0 48px}
+    section{padding:48px 0}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">Ato Inc.</div>
+    <nav class="menu">
+      <a href="#services">What I do</a>
+      <a href="#profile">Profile</a>
+      <a href="#company">Company</a>
+      <a href="#contact">Contact</a>
+      <a class="lang" href="index.html">日本語</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <p class="kicker">FRACTIONAL CAIO</p>
+      <h1>Dr. Hiroto Akatsuka<br>Fractional CAIO</h1>
+      <p class="lead">Vendor-independent. I design the AI approach that fits your business — and make sure it lasts beyond the initial rollout.</p>
+      <a class="cta" href="#contact">Get in touch</a>
+    </div>
+  </div>
+
+  <section id="situations">
+    <div class="wrap">
+      <h2>When you might need me</h2>
+      <ul class="sit">
+        <li>You want to adopt AI but aren't sure where to apply it, why, or how to measure the impact.</li>
+        <li>Your PoC never reached production — or it stalled when the people in charge changed.</li>
+        <li>You can't judge in-house whether a vendor's proposal is technically sound.</li>
+        <li>Confidential data is keeping your AI plans stuck.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="services" class="sec-soft">
+    <div class="wrap">
+      <h2>What I do</h2>
+      <div class="svc">
+        <div class="item">
+          <p class="t">AI adoption &amp; process redesign, including generative AI</p>
+          <p class="d">Where and why to apply it, how to measure impact, and where to keep human judgment.</p>
+        </div>
+        <div class="item">
+          <p class="t">Data governance for AI</p>
+          <p class="d">Defining which data may go to which AI (cloud / on-prem / API), and within what limits; masking and access control included.</p>
+        </div>
+        <div class="item">
+          <p class="t">Privacy-preserving analytics &amp; data release</p>
+          <p class="d">Using differential privacy and related methods to build statistics and models, and share them externally, without exposing individuals.</p>
+        </div>
+        <div class="item">
+          <p class="t">Forecasting &amp; optimization from mobility, traffic, and demand data</p>
+          <p class="d">Turning large-scale data into prediction and optimization that works in production.</p>
+        </div>
+        <div class="item">
+          <p class="t">A technical advisor on your side</p>
+          <p class="d">Joining vendor selection and negotiation to assess whether proposals are technically sound.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="profile">
+    <div class="wrap">
+      <h2>Why me</h2>
+      <div class="profile">
+        <div class="headshot" role="img" aria-label="Dr. Hiroto Akatsuka"></div>
+        <ul class="cred">
+          <li><strong>Ph.D. in Information Science and Technology, the University of Tokyo</strong> · MENSA member</li>
+          <li><strong>Associate Professor (incoming, April 2027), Kyoto Tachibana University</strong></li>
+          <li><strong>Formerly NTT DOCOMO (2013–2025)</strong> — led the real-time version of <em>Mobile Spatial Statistics</em> and <em>AI-based traffic congestion prediction</em>, from R&amp;D through nationwide deployment.</li>
+          <li><strong>Commendation for Science and Technology by the Minister of Education, Culture, Sports, Science and Technology (MEXT)</strong> · Maejima Hisoka Award · IPSJ Achievement Award</li>
+          <li class="sum">A track record of carrying research all the way to real-world deployment — not stopping at the lab.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="engagement" class="sec-soft">
+    <div class="wrap">
+      <h2>How we can work together</h2>
+      <ul class="eng">
+        <li>Monthly retainer advisory</li>
+        <li>One-off consultation</li>
+        <li>Project-based engagement</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="company">
+    <div class="wrap">
+      <h2>Company</h2>
+      <table class="company">
+        <tr><th>Company</th><td>Ato Inc.</td></tr>
+        <tr><th>Representative</th><td>Hiroto Akatsuka, CEO</td></tr>
+        <tr><th>Founded</th><td>August 2025</td></tr>
+        <tr><th>Address</th><td>85-2 Koinari-cho, Shimogyo-ku, Kyoto 600-8208, Japan<br>(Grand-K Kyoto Ekimae Bldg. 201)</td></tr>
+        <tr><th>Business</th><td>AI consulting · research and real-world deployment of mathematical models</td></tr>
+        <tr><th>Contact</th><td><a href="mailto:hiroto@atoinc.jp">hiroto@atoinc.jp</a></td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="contact" class="sec-soft">
+    <div class="wrap contact">
+      <h2>Contact</h2>
+      <p>For AI advisory or a technical-advisor engagement, please reach out by email.</p>
+      <p><a class="mail" href="mailto:hiroto@atoinc.jp">hiroto@atoinc.jp</a></p>
+      <p style="margin-top:24px"><a class="cta" href="mailto:hiroto@atoinc.jp?subject=AI%20advisory%20inquiry">Email me</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="small">© 2026 Ato Inc.</p>
+  </div>
+</footer>
+
+</body>
+</html>
