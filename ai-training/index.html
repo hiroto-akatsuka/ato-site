@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>経営層・管理職向け 生成AIリスク／ガバナンス研修｜株式会社アト</title>
+<meta name="description" content="操作方法の研修ではありません。情報漏洩・シャドーAI・利用規程・責任分界——事故を防ぐ側の研修です。経営層・管理職向け。役員会で使える2時間の経営層ブリーフィングと、2日間・10時間のガバナンス実務研修（人材開発支援助成金の対象になり得ます）。登壇は東大AI博士の代表本人。">
+<meta property="og:title" content="経営層・管理職向け 生成AIリスク／ガバナンス研修｜株式会社アト">
+<meta property="og:description" content="“使い方”の研修では、事故は防げません。経営層・管理職のための、生成AIのリスクと統制の研修。2時間の経営層ブリーフィングと、2日間・10時間のガバナンス実務研修。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://atoinc.jp/ai-training/">
+<meta property="og:locale" content="ja_JP">
+<link rel="canonical" href="https://atoinc.jp/ai-training/">
+<!-- ▼▼ 出稿時に有効化：Google Ads タグ（AW-ID を実IDへ差し替えてコメントを外す）▼▼
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','AW-XXXXXXXXXX');
+</script>
+▲▲ ここまで ▲▲ -->
+<style>
+  :root{
+    --ink:#1a1f29; --navy:#1b2c4b; --muted:#5b6472;
+    --line:#e3e6ec; --bg:#ffffff; --bg-soft:#f6f7f9; --gold:#b08d4f;
+    --serif:"Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif JP",serif;
+    --sans:"Yu Gothic","YuGothic","Hiragino Kaku Gothic ProN","Noto Sans JP","Meiryo",sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;color:var(--ink);background:var(--bg);font-family:var(--sans);
+       line-height:1.8;font-size:16px;-webkit-font-smoothing:antialiased;}
+  a{color:var(--navy);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px}
+
+  header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);
+         backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;
+       padding:14px 24px;max-width:880px;margin:0 auto;gap:16px;flex-wrap:wrap}
+  .brand{font-family:var(--serif);font-size:18px;letter-spacing:.06em;color:var(--ink);font-weight:600}
+  .nav .cta-mini{background:var(--navy);color:#fff;padding:8px 18px;border-radius:6px;font-size:13.5px}
+  .nav .cta-mini:hover{text-decoration:none;opacity:.92}
+
+  .hero{padding:76px 0 60px;border-bottom:1px solid var(--line)}
+  .kicker{font-size:13px;letter-spacing:.18em;color:var(--gold);font-weight:600;margin:0 0 18px}
+  .hero h1{font-family:var(--serif);font-size:clamp(27px,5.4vw,42px);line-height:1.4;
+           margin:0 0 22px;font-weight:600;letter-spacing:.02em}
+  .lead{font-size:clamp(15.5px,2.3vw,18px);color:var(--ink);max-width:700px;margin:0}
+  .cta{margin-top:32px;display:inline-block;background:var(--navy);color:#fff;
+       padding:14px 30px;border-radius:6px;font-size:15.5px;letter-spacing:.04em}
+  .cta:hover{text-decoration:none;opacity:.92}
+  .cta-note{margin-top:10px;font-size:13px;color:var(--muted)}
+
+  section{padding:60px 0;border-bottom:1px solid var(--line)}
+  .sec-soft{background:var(--bg-soft)}
+  h2{font-family:var(--serif);font-size:24px;font-weight:600;margin:0 0 26px;
+     letter-spacing:.04em;position:relative;padding-bottom:12px}
+  h2::after{content:"";position:absolute;left:0;bottom:0;width:46px;height:2px;background:var(--gold)}
+
+  .sit{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+  .sit li{position:relative;padding-left:30px;color:var(--ink)}
+  .sit li::before{content:"✓";position:absolute;left:2px;top:0;color:var(--navy);font-weight:700}
+
+  .diff{display:grid;gap:22px}
+  .diff .item{border-left:3px solid var(--navy);padding:4px 0 4px 18px}
+  .diff .t{font-weight:700;color:var(--ink);margin:0 0 4px;font-size:16.5px}
+  .diff .d{color:var(--muted);margin:0;font-size:14.5px}
+
+  .profile{display:grid;grid-template-columns:200px 1fr;gap:32px;align-items:center}
+  .headshot{width:200px;height:240px;border-radius:8px;background:#e9ecf1 center/cover no-repeat;
+            background-image:url('../profile.jpg');border:1px solid var(--line)}
+  .cred{list-style:none;padding:0;margin:0;display:grid;gap:13px;font-size:15px}
+  .cred li{padding-left:20px;position:relative}
+  .cred li::before{content:"—";position:absolute;left:0;color:var(--gold)}
+
+  h3.fmt{font-family:var(--serif);font-size:19px;font-weight:600;margin:0 0 8px;color:var(--navy)}
+  p.fmt-d{margin:0 0 30px;font-size:15px}
+  .block-t{font-weight:700;margin:32px 0 14px}
+
+  ol.curr{list-style:none;counter-reset:ch;padding:0;margin:0;display:grid;gap:14px}
+  ol.curr li{counter-increment:ch;position:relative;padding-left:46px}
+  ol.curr li::before{content:counter(ch);position:absolute;left:0;top:2px;width:30px;height:30px;
+       border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;
+       justify-content:center;font-weight:700;font-size:14px}
+  ol.curr .t{font-weight:700;margin:0}
+  ol.curr .d{color:var(--muted);margin:0;font-size:14px}
+  .curr-note{font-size:13px;color:var(--muted);margin-top:20px}
+
+  .pricebox{border:1px solid var(--line);border-radius:8px;background:#fff;padding:22px 26px}
+  .pricebox .n{color:var(--muted);font-size:13.5px;margin:14px 0 0}
+  table.price-tbl{width:100%;border-collapse:collapse;font-size:15px}
+  table.price-tbl th{text-align:left;vertical-align:top;padding:14px 14px 14px 0;
+       color:var(--navy);font-weight:700;white-space:nowrap}
+  table.price-tbl td{text-align:left;vertical-align:top;padding:14px 0}
+  table.price-tbl td.sub{color:var(--muted);font-size:14px;width:100%;padding-right:14px}
+  table.price-tbl td.p2{font-family:var(--serif);font-size:20px;color:var(--navy);
+       font-weight:600;white-space:nowrap;text-align:right}
+  table.price-tbl tr+tr th,table.price-tbl tr+tr td{border-top:1px solid var(--line)}
+
+  .grant{margin-top:28px;border-left:3px solid var(--gold);padding:2px 0 2px 20px}
+  .grant .gt{font-weight:700;margin:0 0 10px}
+  .grant p{margin:0 0 12px;font-size:14.5px}
+  .grant p:last-child{margin-bottom:0}
+  .grant .note{font-size:13px;color:var(--muted)}
+
+  .faq dt{font-weight:700;margin:24px 0 6px}
+  .faq dt:first-child{margin-top:0}
+  .faq dd{margin:0;color:var(--muted);font-size:14.5px}
+
+  .contact p{margin:0 0 22px;color:var(--muted)}
+  /* ⚠高さはGoogleの埋め込みスニペットが返す height に合わせる（LP-B専用フォーム＝2026-08-08時点で2017）＋余白。
+     モバイルは折り返しが増えて縦に伸びるため上乗せを厚くする（LP-A実測比＝返却値の約1.25倍）。
+     フォームの設問を増減したら実表示で再確認すること（不足すると iframe 内に縦スクロールが出て、
+     ユーザーが下の設問と送信ボタンに気づかない＝CVR直撃） */
+  .form-embed iframe{width:100%;height:2080px;border:0;display:block}
+  .form-fallback{font-size:13.5px;color:var(--muted);margin-top:16px}
+
+  footer{padding:34px 0;text-align:center;color:var(--muted);font-size:13px}
+  .small{font-size:13px;color:var(--muted)}
+
+  @media(max-width:640px){
+    .profile{grid-template-columns:1fr;justify-items:start}
+    .headshot{width:120px;height:144px}
+    .hero{padding:56px 0 44px}
+    section{padding:46px 0}
+    .pricebox{padding:20px}
+    table.price-tbl th,table.price-tbl td{display:block;padding:4px 0}
+    table.price-tbl td.p2{text-align:left;padding-top:8px}
+    table.price-tbl tr+tr th{border-top:1px solid var(--line);padding-top:18px}
+    table.price-tbl tr+tr td{border-top:0}
+    .form-embed iframe{height:2550px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="https://atoinc.jp/">株式会社アト</a>
+    <a class="cta-mini" href="#contact">研修の相談をする</a>
+  </div>
+</header>
+
+<main>
+  <!-- ① HERO -->
+  <div class="hero">
+    <div class="wrap">
+      <p class="kicker">経営層・管理職向け 生成AIリスク／ガバナンス研修</p>
+      <h1>“使い方”の研修では、<br>事故は防げません。</h1>
+      <p class="lead">経営層・管理職のための、生成AIのリスクと統制の研修。<br>
+      扱うのはリスクの構造・規程の作り方・統制の実務です。<br>
+      <span style="font-size:15px;color:var(--muted)">役員会で使える2時間の経営層ブリーフィングと、2日間・10時間のガバナンス実務研修。</span></p>
+      <a class="cta" href="#contact">研修の相談をする</a>
+      <p class="cta-note">まず30分のオンライン相談で、貴社の状況に合うかをご判断いただけます</p>
+    </div>
+  </div>
+
+  <!-- ② 買い手の状況 -->
+  <section id="pains">
+    <div class="wrap">
+      <h2>こんな状態ではありませんか</h2>
+      <ul class="sit">
+        <li>生成AIのリスクとして、<strong>何を、どこまで気にすべきか</strong>の基準がない</li>
+        <li>対策はしているつもりだが、<strong>今のままで十分なのかがわからない</strong></li>
+        <li>「使ってよい／だめ」の線引きを決めたいが、<strong>決めるための材料がない</strong></li>
+        <li>部下やベンダーから聞かれたときに、<strong>自分の言葉で答えられない</strong></li>
+        <li>ベンダーの「セキュリティ対応済み」という説明を、<strong>妥当か判断できない</strong></li>
+        <li>全社で生成AIを使わせたいが、<strong>その前に決めておくべきこと</strong>が決まっていない</li>
+        <li>監査・取引先から、<strong>利用ルールと教育の記録</strong>を問われている</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ③ 他の研修との違い -->
+  <section id="diff" class="sec-soft">
+    <div class="wrap">
+      <h2>他のAI研修と、何が違うか</h2>
+      <div class="diff">
+        <div class="item">
+          <p class="t">操作方法を教えません</p>
+          <p class="d">扱うのは、情報漏洩の経路・シャドーAIの統制・利用規程の作り方・事故時の責任分界。「使い方」ではなく「事故を防ぐ側」の研修です。</p>
+        </div>
+        <div class="item">
+          <p class="t">製品を売る側ではありません</p>
+          <p class="d">当社はセキュリティ製品もAIツールのライセンスも販売しません。だから、費用の実額や、ツールで解けないことを、そのままお話しできます。</p>
+        </div>
+        <div class="item">
+          <p class="t">意思決定者の目線で構成しています</p>
+          <p class="d">生成AIのリスク対応は、経営層・管理職が決める事項です。実務を担う方のご参加も歓迎します。</p>
+        </div>
+        <div class="item">
+          <p class="t">登壇は代表本人</p>
+          <p class="d">大学で研究・教育に従事する、AIの研究開発と社会実装の実務家が直接登壇します。研修会社の派遣講師ではありません。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ④ 権威ブロック -->
+  <section id="profile">
+    <div class="wrap">
+      <h2>登壇者</h2>
+      <div class="profile">
+        <div class="headshot" role="img" aria-label="赤塚 裕人"></div>
+        <ul class="cred">
+          <li><strong>赤塚 裕人</strong>（株式会社アト 代表取締役）</li>
+          <li><strong>京都橘大学 客員研究員</strong>（2027年度 准教授就任予定）——大学で講義を担当する現役の教育者</li>
+          <li><strong>博士（情報理工学・東京大学）</strong>／<strong>科学技術分野の文部科学大臣表彰</strong> 受賞</li>
+          <li>大手通信事業者で、人流ビッグデータ・AIの研究開発と社会実装を主導（「モバイル空間統計」リアルタイム版・「AI渋滞予知」）</li>
+          <li><strong>国のデータ保護技術プロジェクトに参画中</strong>——JST 経済安全保障重要技術育成プログラム（K Program）「高機能暗号」／差分プライバシー研究グループ</li>
+          <li>日本経済新聞・毎日新聞・BBC World News・テレビ東京 ワールドビジネスサテライト等で報道／査読論文10本・登録特許8件</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑤ 2つの形式・カリキュラム -->
+  <section id="curriculum" class="sec-soft">
+    <div class="wrap">
+      <h2>2つの形式</h2>
+      <p style="margin:0 0 32px">目的に応じて2つご用意しています。それぞれ果たす役割が違い、<strong>「決めるための2時間」</strong>と<strong>「作れるようになるための2日間」</strong>です。</p>
+
+      <h3 class="fmt">経営層ブリーフィング（2時間）</h3>
+      <p class="fmt-d">役員会・経営会議の枠に載せる形式です。生成AIのリスクの全体像と、自社に何が欠けているのかを整理します。ゴールは<strong>「自社の生成AIへのリスク対策の状況と判断基準を、自分の言葉で言える状態」</strong>。</p>
+
+      <h3 class="fmt">ガバナンス実務研修（2日間・10時間）</h3>
+      <p class="fmt-d">講義と演習で、規程・責任分界・調達判断の<strong>「作り方」</strong>まで踏み込みます。<strong>利用規程のひな形と、判断の論点表を教材としてお渡しし</strong>、受講後にご自身で自社版を作れる状態を目指します。</p>
+
+      <p class="block-t">講義（章立ての設計例）</p>
+      <ol class="curr">
+        <li><p class="t">生成AIのリスクの全体像</p><p class="d">何が、どこから漏れるのか。会社が認めたツールの内と外で、それぞれ何が起きるのか。</p></li>
+        <li><p class="t">「セキュリティ対応済み」の解剖</p><p class="d">AIツールは3つの層でできています。どこが誰でも手に入る条件で、どこに不具合が住み、どこがツールでは原理的に解けないのか。</p></li>
+        <li><p class="t">打ち手の地図と、その限界</p><p class="d">何が防げて、何は防げないのか。過大な対策を避けるための判断軸。</p></li>
+        <li><p class="t">費用の現実</p><p class="d">ライセンス・設定・運用に実際いくらかかるのか。新たに発生する費用と、すでに払っている費用の切り分け。</p></li>
+        <li><p class="t">利用規程と責任分界の作り方</p><p class="d">「AI事業者ガイドライン」等の公的ガイドラインを踏まえた実務。何を機密とし、誰に何を許すのかは、外部に委託できません。</p></li>
+        <li><p class="t">調達・ベンダー選定の判断</p><p class="d">提案書と見積の、どこを確認するか。</p></li>
+        <li><p class="t">AIエージェント時代の統制</p><p class="d">人ではないものが権限を持って動き出したとき、何が変わるのか。</p></li>
+        <li><p class="t">事故が起きた日</p><p class="d">初動と説明責任。誰が・何を・どの順で。</p></li>
+      </ol>
+
+      <p class="block-t">演習（実務研修のみ）</p>
+      <ul class="sit">
+        <li>生成AIの利用実態を、どう棚卸しするか</li>
+        <li>機密区分の線引き——何を入れてよく、何がだめか</li>
+        <li>利用規程の読み解きと、押さえるべき条項</li>
+        <li>責任分界の設計パターン</li>
+        <li>事故発生時の初動フローの組み立て</li>
+      </ul>
+
+      <p class="curr-note">章立ては設計例です。詳細は、貴社の業種・利用状況に合わせてカスタマイズします。演習は設例（架空の企業ケース）で行います。<strong>貴社固有の規程や体制を実際に作るところまでご一緒する場合は、研修ではなく<a href="../ai-governance/">診断・顧問</a>としてお受けします。</strong></p>
+    </div>
+  </section>
+
+  <!-- ⑥⑦ 価格・助成金 -->
+  <section id="price">
+    <div class="wrap">
+      <h2>料金</h2>
+      <div class="pricebox">
+        <table class="price-tbl">
+          <tr>
+            <th>経営層ブリーフィング</th>
+            <td class="sub">2時間／役員会・経営会議の枠で</td>
+            <td class="p2">30〜50万円</td>
+          </tr>
+          <tr>
+            <th>ガバナンス実務研修</th>
+            <td class="sub">2日間・10時間／受講者1名あたり（最少催行5名）</td>
+            <td class="p2">30万円／名</td>
+          </tr>
+        </table>
+        <p class="n">いずれも税別。<strong>貴社の会議室等での対面実施</strong>と<strong>オンライン（同時双方向）</strong>のどちらにも対応します。受講人数が多い場合もご相談ください。</p>
+      </div>
+
+      <div class="grant">
+        <p class="gt">人材開発支援助成金について</p>
+        <p>ガバナンス実務研修は、リスクの構造から規程の作り方・調達判断までを扱うため、<strong>2日間・10時間</strong>の構成としています。この時間数は、<strong>人材開発支援助成金</strong>の要件のひとつである<strong>「訓練時間数が10時間以上の訓練であること」</strong>を満たします。<strong>対象となる場合、貴社の実負担は大きく下がります。</strong></p>
+        <p>また、助成の対象は<strong>「対象労働者の職務に直接関連する訓練」</strong>とされています。本研修が扱うのは、操作方法ではなくリスクの構造・規程・統制です。受講案内・カリキュラム・時間割・受講証明など、<strong>申請に必要な書類の整備に対応します</strong>（訓練実施者として提出が求められる書類にも対応します）。</p>
+        <p>⚠<strong>日程は逆算が必要です。</strong>この助成金では<strong>訓練開始日の1か月前までに計画届を労働局へ提出</strong>することが求められます。ご相談は早めにいただけると確実です。</p>
+        <p class="note">※助成の対象となる受講者は、雇用保険の被保険者に限られます（役員のみでのご受講は対象外となる場合があります）。また、受講者ごとに<strong>実訓練時間の8割以上の受講</strong>が必要です。実施場所は<strong>通常の業務と区別された会議室・研修室等</strong>である必要があり、オンラインで受講者が自宅等から参加される場合は、貴社に<strong>テレワーク勤務制度の定め</strong>があることが要件となります。適用可否・助成率・要件の最終判断は、貴社の社労士・管轄労働局にご確認ください。申請の主体は受講される企業様となります。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ⑧ FAQ -->
+  <section id="faq" class="sec-soft">
+    <div class="wrap">
+      <h2>よくあるご質問</h2>
+      <dl class="faq">
+        <dt>Q. 助成金は使えますか</dt>
+        <dd>人材開発支援助成金の対象になり得ます。対象となるのは<strong>ガバナンス実務研修（2日間・10時間）</strong>で、経営層ブリーフィング（2時間）は訓練時間数の要件から対象外です。適用可否の最終判断は、貴社の社労士・管轄労働局にご確認ください。申請の主体は受講される企業様となります。</dd>
+
+        <dt>Q. 役員だけで受講したいのですが</dt>
+        <dd>ご受講自体は可能です。ただし助成の対象となる受講者は<strong>雇用保険の被保険者</strong>に限られるため、役員の方のみですと助成の対象外となる場合があります。役員の方向けには、2時間の経営層ブリーフィングをおすすめしています。</dd>
+
+        <dt>Q. 自社の会議室で実施しても、助成の対象になりますか</dt>
+        <dd>なります。要件は場所の名称ではなく、<strong>通常の業務と区別して実施していること</strong>です（審査の際に確認されます）。営業中の店舗や稼働中の製造ラインなど、業務が動いている場所での実施は対象外です。</dd>
+
+        <dt>Q. オンラインでも助成の対象になりますか</dt>
+        <dd>なります。当社のオンライン実施は録画教材ではなく、<strong>質疑応答を行いながら進める同時双方向の形式</strong>です。受講者が会社の会議室等から参加される場合、追加の要件はありません。<strong>自宅等から参加される場合は、貴社にテレワーク勤務制度の定め（労働協約・就業規則等）があること</strong>が要件となります。</dd>
+
+        <dt>Q. お申し込みから実施まで、どれくらいかかりますか</dt>
+        <dd>助成金を活用される場合、<strong>訓練開始日の1か月前まで</strong>に計画届を労働局へ提出する必要があります。加えてその前提として、<strong>職業能力開発推進者の選任</strong>と<strong>事業内職業能力開発計画の策定・周知</strong>が必要です。未着手の場合はその期間も見て、2か月程度の余裕をみてご相談ください。助成金を使わない場合は、この限りではありません。</dd>
+
+        <dt>Q. 当日、欠席や遅刻が出た場合は</dt>
+        <dd>助成の対象となるには、受講者ごとに<strong>実訓練時間の8割以上の受講</strong>が必要です。8割に満たない方はその方のみが対象外となり、他の受講者には影響しません。</dd>
+
+        <dt>Q. 自社の利用規程そのものを作ってほしいのですが</dt>
+        <dd>研修は知識・技能の習得を目的とするため、貴社固有の規程や体制を実際に作る作業は含みません（演習は設例で行います）。その部分は、<a href="../ai-governance/">診断・顧問</a>としてお受けしています。</dd>
+
+        <dt>Q. 秘密保持はどうなりますか</dt>
+        <dd>必要なタイミングで秘密保持契約を締結のうえ実施します。</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ⑩ 相互リンク -->
+  <section id="crosslink">
+    <div class="wrap">
+      <h2>まず現状を把握したい方へ</h2>
+      <p>研修の前に、自社の生成AIリスクの現在地を知りたい——という場合は、<strong><a href="../ai-governance/">無料の利用実態・リスク診断（30分・オンライン）</a></strong>からどうぞ。現状の危険度と対策の優先順位を1枚の所見にしてお渡しします。</p>
+    </div>
+  </section>
+
+  <!-- ⑨ フォーム -->
+  <section id="contact" class="sec-soft">
+    <div class="wrap contact">
+      <h2>研修のご相談・お申し込み</h2>
+      <p>下記フォームよりご連絡ください。1営業日以内に、日程調整のご連絡を差し上げます。ご入力いただいた情報は、お問い合わせへの対応およびご案内のために利用します。当社は、法令に基づく場合を除き、ご本人の同意なく個人情報を第三者に提供しません。詳しくは<a href="../privacy.html">個人情報保護方針</a>をご覧ください。</p>
+      <!-- ⚠️公開前に必ず差し替え：LP-B専用のGoogleフォーム（LP-Aとは別フォーム。2026-08-08 本人裁定）
+           設問＝①会社名 ②お名前 ③メールアドレス（必須）④従業員規模（〜100／100〜500／500〜）
+                 ⑤ご関心（複数選択）＝経営層ブリーフィング（2時間）／ガバナンス実務研修（2日間・10時間）／
+                   どちらがよいか相談したい／まず現状の診断を受けたい
+                 ⑥受講予定の人数（おおよそ）
+                 ⑦人材開発支援助成金の活用（検討している／検討していない／わからない）
+                 ⑧ご希望の実施時期（任意）⑨ご質問・お困りごと（自由記述・任意）
+           ⚠差し替え後、埋め込みスニペットが返す height を実表示で確認して .form-embed iframe の値を更新すること -->
+      <div class="form-embed">
+        <iframe id="leadform" src="https://docs.google.com/forms/d/e/1FAIpQLSet1-c4GNZdQ4XriTDMUdqiaYmtDZGVGyrQh7dv03S-XlMRYg/viewform?embedded=true" title="研修のご相談フォーム" loading="lazy">読み込んでいます…</iframe>
+      </div>
+      <p class="form-fallback">フォームがうまく表示されない場合は、<a href="https://docs.google.com/forms/d/e/1FAIpQLSet1-c4GNZdQ4XriTDMUdqiaYmtDZGVGyrQh7dv03S-XlMRYg/viewform" target="_blank" rel="noopener">こちらのフォーム</a>からご入力ください。</p>    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="small"><a href="../privacy.html">個人情報保護方針</a>　｜　<a href="https://atoinc.jp/">会社概要</a></p>
+    <p class="small">「モバイル空間統計」は株式会社NTTドコモの登録商標です。</p>
+    <p class="small">© 2026 株式会社アト（Ato Inc.）</p>
+  </div>
+</footer>
+
+<script>
+/* フォーム送信のコンバージョン計測（LP-Aと同一機構）。出稿時に send_to を実IDへ差し替え。 */
+(function(){
+  var n = 0, f = document.getElementById('leadform');
+  if (!f) return;
+  f.addEventListener('load', function(){
+    n++;
+    if (n > 1 && typeof gtag === 'function') {
+      gtag('event', 'conversion', {'send_to': 'AW-XXXXXXXXXX/YYYYYYYYYYY'});
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
