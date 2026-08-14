@@ -11,13 +11,14 @@
 <meta property="og:url" content="https://atoinc.jp/ai-training/">
 <meta property="og:locale" content="ja_JP">
 <link rel="canonical" href="https://atoinc.jp/ai-training/">
-<!-- ▼▼ 出稿時に有効化：Google Ads タグ（AW-ID を実IDへ差し替えてコメントを外す）▼▼
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"></script>
+<!-- Google Ads タグ（2026-08-14 有効化・コンバージョンID AW-18364059187）
+     ⚠このブロックを再びコメントアウトすると、末尾のイベントスニペットが gtag 未定義で黙って何もしなくなる
+     （エラーも警告も出ずコンバージョン0件のまま配信が回る＝サイレント故障）。 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18364059187"></script>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());gtag('config','AW-XXXXXXXXXX');
+gtag('js',new Date());gtag('config','AW-18364059187');
 </script>
-▲▲ ここまで ▲▲ -->
 <style>
   :root{
     --ink:#1a1f29; --navy:#1b2c4b; --muted:#5b6472;
@@ -351,14 +352,16 @@ gtag('js',new Date());gtag('config','AW-XXXXXXXXXX');
 </footer>
 
 <script>
-/* フォーム送信のコンバージョン計測（LP-Aと同一機構）。出稿時に send_to を実IDへ差し替え。 */
+/* フォーム送信のコンバージョン計測（LP-Aと同一機構）。2026-08-14 実IDを設定済。
+   ⚠LP-Aと同一のコンバージョンアクションを共有する（アクションは1つだけ作る裁定）。
+   流入口別のCPAはキャンペーン単位で読むため、ここを分ける必要はない。 */
 (function(){
   var n = 0, f = document.getElementById('leadform');
   if (!f) return;
   f.addEventListener('load', function(){
     n++;
     if (n > 1 && typeof gtag === 'function') {
-      gtag('event', 'conversion', {'send_to': 'AW-XXXXXXXXXX/YYYYYYYYYYY'});
+      gtag('event', 'conversion', {'send_to': 'AW-18364059187/5GfqCKbswOEcELOc1bRE'});
     }
   });
 })();
