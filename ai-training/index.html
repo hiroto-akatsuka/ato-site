@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>経営層・管理職向け 生成AIリスク／ガバナンス研修｜株式会社アト</title>
-<meta name="description" content="操作方法の研修ではありません。情報漏洩・シャドーAI・利用規程・責任分界——事故を防ぐ側の研修です。経営層・管理職向け。役員会で使える2時間の経営層ブリーフィングと、2日間・10時間のガバナンス実務研修（人材開発支援助成金の対象になり得ます）。登壇は東大AI博士の代表本人。">
-<meta property="og:title" content="経営層・管理職向け 生成AIリスク／ガバナンス研修｜株式会社アト">
-<meta property="og:description" content="“使い方”の研修では、事故は防げません。経営層・管理職のための、生成AIのリスクと統制の研修。2時間の経営層ブリーフィングと、2日間・10時間のガバナンス実務研修。">
+<title>経営層・管理職／実務担当者向け 生成AIリスク・ガバナンス研修｜株式会社アト</title>
+<meta name="description" content="操作方法の研修ではありません。情報漏洩・シャドーAI・利用規程・責任分界——事故を防ぐ側の研修です。経営層・管理職／実務担当者向け。役員会で使える2時間の経営層ブリーフィングと、2日間・10時間のガバナンス実務研修（人材開発支援助成金の対象になり得ます）。登壇は東大AI博士の代表本人。">
+<meta property="og:title" content="経営層・管理職／実務担当者向け 生成AIリスク・ガバナンス研修｜株式会社アト">
+<meta property="og:description" content="“使い方”の研修では、事故は防げません。決めるのは経営層・管理職、運用するのは実務担当者。生成AIのリスクと統制を、その両方に必要な形で扱います。2時間の経営層ブリーフィングと、2日間・10時間のガバナンス実務研修。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://atoinc.jp/ai-training/">
 <meta property="og:locale" content="ja_JP">
@@ -113,7 +113,7 @@ gtag('js',new Date());gtag('config','AW-18364059187');
      モバイルは折り返しが増えて縦に伸びるため上乗せを厚くする（LP-A実測比＝返却値の約1.25倍）。
      フォームの設問を増減したら実表示で再確認すること（不足すると iframe 内に縦スクロールが出て、
      ユーザーが下の設問と送信ボタンに気づかない＝CVR直撃） */
-  .form-embed iframe{width:100%;height:2080px;border:0;display:block}
+  .form-embed iframe{width:100%;height:2120px;border:0;display:block}
   .form-fallback{font-size:13.5px;color:var(--muted);margin-top:16px}
 
   footer{padding:34px 0;text-align:center;color:var(--muted);font-size:13px}
@@ -146,9 +146,10 @@ gtag('js',new Date());gtag('config','AW-18364059187');
   <!-- ① HERO -->
   <div class="hero">
     <div class="wrap">
-      <p class="kicker">経営層・管理職向け 生成AIリスク／ガバナンス研修</p>
+      <p class="kicker">経営層・管理職／実務担当者向け 生成AIリスク・ガバナンス研修</p>
       <h1>“使い方”の研修では、<br>事故は防げません。</h1>
-      <p class="lead">経営層・管理職のための、生成AIのリスクと統制の研修。<br>
+      <p class="lead">決めるのは経営層・管理職、運用するのは実務担当者です。<br>
+      生成AIのリスクと統制を、その両方に必要な形で扱います。<br>
       扱うのはリスクの構造・規程の作り方・統制の実務です。<br>
       <span style="font-size:15px;color:var(--muted)">役員会で使える2時間の経営層ブリーフィングと、2日間・10時間のガバナンス実務研修。</span></p>
       <a class="cta" href="#contact">研修の相談をする</a>
@@ -328,14 +329,20 @@ gtag('js',new Date());gtag('config','AW-18364059187');
     <div class="wrap contact">
       <h2>研修のご相談・お申し込み</h2>
       <p>下記フォームよりご連絡ください。2営業日以内に、日程調整のご連絡を差し上げます。ご入力いただいた情報は、お問い合わせへの対応およびご案内のために利用します。当社は、法令に基づく場合を除き、ご本人の同意なく個人情報を第三者に提供しません。詳しくは<a href="../privacy.html">個人情報保護方針</a>をご覧ください。</p>
-      <!-- ⚠️公開前に必ず差し替え：LP-B専用のGoogleフォーム（LP-Aとは別フォーム。2026-08-08 本人裁定）
-           設問＝①会社名 ②お名前 ③メールアドレス（必須）④従業員規模（〜100／100〜500／500〜）
+      <!-- LP-B専用のGoogleフォーム（LP-Aとは別フォーム。2026-08-08 本人裁定／2026-08-18 設問仕様を更新）
+           ⭐本欄がフォーム設問の仕様の正典。フォーム実物を本欄に合わせる（食い違いを見つけたら、まずここと突合する）
+           設問＝①会社名 ②お名前 ③メールアドレス（必須）
+                 ④従業員規模＝〜100名／101〜300名／301〜500名／501名〜
+                   境界の根拠＝100:卸売・サービス業の中小上限／300:製造業その他の中小上限＝助成率75%の分かれ目／
+                   500:ICP上限（社員100-500人・村上助言）。501名以上は細分しても8週の裁定が変わらないので刻まない
                  ⑤ご関心（複数選択）＝経営層ブリーフィング（2時間）／ガバナンス実務研修（2日間・10時間）／
-                   どちらがよいか相談したい／まず現状の診断を受けたい
+                   どちらがよいか相談したい／まず現状の診断を受けたい／その他のご相談
+                   ⛔「本編」の呼称は使わない（2026-08-08裁定＝本編があると他方が予告編に降格し対等でない語になる）
                  ⑥受講予定の人数（おおよそ）
                  ⑦人材開発支援助成金の活用（検討している／検討していない／わからない）
                  ⑧ご希望の実施時期（任意）⑨ご質問・お困りごと（自由記述・任意）
-           ⚠差し替え後、埋め込みスニペットが返す height を実表示で確認して .form-embed iframe の値を更新すること -->
+           ⚠差し替え後、埋め込みスニペットが返す height を実表示で確認して .form-embed iframe の値を更新すること
+           （2026-08-18＝設問数は不変ゆえ実測は取り直さず、PC 2080→2120 の余白のみ厚くした。余白は無害・不足は致命） -->
       <div class="form-embed">
         <iframe id="leadform" src="https://docs.google.com/forms/d/e/1FAIpQLSet1-c4GNZdQ4XriTDMUdqiaYmtDZGVGyrQh7dv03S-XlMRYg/viewform?embedded=true" title="研修のご相談フォーム" loading="lazy">読み込んでいます…</iframe>
       </div>
