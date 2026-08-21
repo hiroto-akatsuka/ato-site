@@ -98,6 +98,37 @@ gtag('js',new Date());gtag('config','AW-18364059187');
        font-weight:600;white-space:nowrap;text-align:right}
   table.price-tbl tr+tr th,table.price-tbl tr+tr td{border-top:1px solid var(--line)}
 
+  /* 助成金を使った場合のご負担の試算。
+     ⚠断定を避ける設計＝〈見出しに「試算」〉〈前提を同じ文字サイズで併記〉〈金額を price-tbl より大きくしない〉。
+     ⛔「実質◯円」という強調表現は使わない（有利誤認・情報商材的な参照クラスの両方を避ける）。
+     ⚠数字を変えるときは 受講料・助成率75%・賃金助成960円/人時 の3つを同時に見直すこと。 */
+  table.calc{width:100%;border-collapse:collapse;font-size:14.5px;margin:6px 0 0}
+  table.calc th{text-align:left;font-weight:400;color:var(--muted);padding:9px 12px 9px 0;
+                border-bottom:1px solid var(--line);white-space:nowrap}
+  table.calc td{text-align:right;padding:9px 0;border-bottom:1px solid var(--line);
+                font-variant-numeric:tabular-nums}
+  table.calc tr.sum th{font-weight:700;color:var(--ink)}
+  table.calc tr.sum td{font-weight:700;color:var(--navy);font-size:16px}
+  table.calc tr:last-child th,table.calc tr:last-child td{border-bottom:0}
+  /* 助成金を使う場合の時系列（2026-08-21 追加）。
+     ⚠凝った図にしない＝テキストの縦一列。読み手は忙しいので〈いつ〉〈誰が〉が1行で拾えることだけを狙う。
+     ⚠期限は2つだけ厳守（計画届＝開始1か月前／支給申請＝終了翌日から2か月）。この2つだけ .hard で赤く出す。
+     出所＝厚労省 詳細版44p の手続きフロー・チェックリスト（実見）。数字を触るときは原本を引き直すこと。 */
+  ol.flow{list-style:none;counter-reset:fl;padding:0;margin:16px 0 0}
+  ol.flow li{counter-increment:fl;position:relative;padding:0 0 20px 40px;
+             border-left:2px solid var(--line);margin:0}
+  ol.flow li:last-child{border-left-color:transparent;padding-bottom:0}
+  ol.flow li::before{content:counter(fl);position:absolute;left:-13px;top:0;
+             width:24px;height:24px;border-radius:50%;background:var(--navy);color:#fff;
+             display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:700}
+  ol.flow .w{font-weight:700;display:block;line-height:1.6}
+  ol.flow .d{color:var(--muted);font-size:13.5px;margin:2px 0 0;line-height:1.7}
+  ol.flow .who{display:inline-block;font-size:11.5px;font-weight:700;line-height:1;
+             padding:4px 8px;border-radius:3px;margin-left:8px;vertical-align:2px;
+             background:var(--bg-soft);color:var(--muted);border:1px solid var(--line)}
+  ol.flow .who.ato{background:#1b2c4b;color:#fff;border-color:#1b2c4b}
+  ol.flow .lim{font-size:13.5px;margin:3px 0 0;color:var(--ink)}
+  ol.flow .lim.hard{color:#a12a2a;font-weight:700}
   .grant{margin-top:28px;border-left:3px solid var(--gold);padding:2px 0 2px 20px}
   .grant .gt{font-weight:700;margin:0 0 10px}
   .grant p{margin:0 0 12px;font-size:14.5px}
@@ -112,8 +143,10 @@ gtag('js',new Date());gtag('config','AW-18364059187');
   /* ⚠高さはGoogleの埋め込みスニペットが返す height に合わせる（LP-B専用フォーム＝2026-08-08時点で2017）＋余白。
      モバイルは折り返しが増えて縦に伸びるため上乗せを厚くする（LP-A実測比＝返却値の約1.25倍）。
      フォームの設問を増減したら実表示で再確認すること（不足すると iframe 内に縦スクロールが出て、
-     ユーザーが下の設問と送信ボタンに気づかない＝CVR直撃） */
-  .form-embed iframe{width:100%;height:2120px;border:0;display:block}
+     ユーザーが下の設問と送信ボタンに気づかない＝CVR直撃）
+     🔁2026-08-21＝外国third party提供の同意設問を1問追加する前提で 2120→2280（+160・1問≒141px）。
+     🔴⚠同意設問を追加するまでは余白が出るだけ（無害）。追加後に実表示で確認すること。 */
+  .form-embed iframe{width:100%;height:2280px;border:0;display:block}
   .form-fallback{font-size:13.5px;color:var(--muted);margin-top:16px}
 
   footer{padding:34px 0;text-align:center;color:var(--muted);font-size:13px}
@@ -129,7 +162,7 @@ gtag('js',new Date());gtag('config','AW-18364059187');
     table.price-tbl td.p2{text-align:left;padding-top:8px}
     table.price-tbl tr+tr th{border-top:1px solid var(--line);padding-top:18px}
     table.price-tbl tr+tr td{border-top:0}
-    .form-embed iframe{height:2550px}
+    .form-embed iframe{height:2710px}
   }
 </style>
 </head>
@@ -262,22 +295,77 @@ gtag('js',new Date());gtag('config','AW-18364059187');
           <tr>
             <th>経営層ブリーフィング</th>
             <td class="sub">2時間／役員会・経営会議の枠で</td>
-            <td class="p2">30〜50万円</td>
+            <td class="p2">30〜50万円<br><span style="font-family:var(--sans);font-size:13px;font-weight:400;color:var(--muted)">（税込33〜55万円）</span></td>
           </tr>
           <tr>
             <th>ガバナンス実務研修</th>
             <td class="sub">2日間・10時間／受講者1名あたり（最少催行5名）</td>
-            <td class="p2">30万円／名</td>
+            <td class="p2">28万円／名<br><span style="font-family:var(--sans);font-size:13px;font-weight:400;color:var(--muted)">（税込308,000円／名）</span></td>
           </tr>
         </table>
-        <p class="n">いずれも税別。<strong>貴社の会議室等での対面実施</strong>と<strong>オンライン（同時双方向）</strong>のどちらにも対応します。受講人数が多い場合もご相談ください。</p>
+        <!-- ⚠税表示について（2026-08-21）＝消費税法63条の括弧書き「専ら他の事業者に課税資産の譲渡等を
+             行う場合を除く」でB2B専業は総額表示義務の対象外〈実見・逐語〉。義務の有無と誤認の有無は別ゆえ併記する。
+             ⚠税率を変えるときは LP-A の料金表と、下の「ご負担の試算」を同時に直すこと。 -->
+        <p class="n">表示価格はすべて<strong>税別</strong>です（括弧内は消費税10%を含む税込価格）。<strong>貴社の会議室等での対面実施</strong>と<strong>オンライン（同時双方向）</strong>のどちらにも対応します。受講人数が多い場合もご相談ください。</p>
       </div>
 
       <div class="grant">
         <p class="gt">人材開発支援助成金について</p>
         <p>ガバナンス実務研修は、リスクの構造から規程の作り方・調達判断までを扱うため、<strong>2日間・10時間</strong>の構成としています。この時間数は、<strong>人材開発支援助成金</strong>の要件のひとつである<strong>「訓練時間数が10時間以上の訓練であること」</strong>を満たします。<strong>対象となる場合、貴社の実負担は大きく下がります。</strong></p>
-        <p>また、助成の対象は<strong>「対象労働者の職務に直接関連する訓練」</strong>とされています。本研修が扱うのは、操作方法ではなくリスクの構造・規程・統制です。受講案内・カリキュラム・時間割・受講証明など、<strong>申請に必要な書類の整備に対応します</strong>（訓練実施者として提出が求められる書類にも対応します）。</p>
-        <p>⚠<strong>日程は逆算が必要です。</strong>この助成金では<strong>訓練開始日の1か月前までに計画届を労働局へ提出</strong>することが求められます。ご相談は早めにいただけると確実です。</p>
+        <!-- 🛑2026-08-21 削除＝「助成の対象は『対象労働者の職務に直接関連する訓練』とされています。本研修が
+             扱うのは、操作方法ではなくリスクの構造・規程・統制です。」の2文。
+             理由（本人指示）＝「結局どうなのかがわからない。構造・規程・統制だから対象なのか対象外なのかが
+             わからない。断定できないということでこういう書き方なんだったら、ないほうがまし」。
+             ⛔断定できない事項を、読み手に判断を投げる形で書かない。⛔AIから復活を再提案しない。 -->
+        <p>受講案内・カリキュラム・時間割・受講証明など、<strong>申請に必要な書類の整備に対応します</strong>（訓練実施者として提出が求められる書類にも対応します）。</p>
+        <p class="gt" style="margin-top:20px">ご負担の試算（中小企業・1名あたり／税込）</p>
+        <p>助成の対象となった場合の目安です。金額を保証するものではありません。下記は<strong>中小企業</strong>が<strong>事業展開等リスキリング支援コース</strong>の適用を受け、所定労働時間内に受講された場合の<strong>試算</strong>です。</p>
+        <table class="calc">
+          <tr><th>受講料（2日間・10時間／1名・税込）</th><td>308,000円</td></tr>
+          <tr><th>経費助成（受講料の75%）</th><td>− 231,000円</td></tr>
+          <tr><th>賃金助成（960円 × 10時間）</th><td>− 9,600円</td></tr>
+          <tr class="sum"><th>差引のご負担（1名あたり）</th><td>67,400円</td></tr>
+          <tr class="sum"><th>同（最少催行の5名でのご受講時）</th><td>337,000円</td></tr>
+        </table>
+        <p class="note" style="margin-top:12px">※<strong>消費税も経費助成の対象に含まれます</strong>（厚生労働省の案内による）。このため上表は税込の受講料を基礎としています。※<strong>経費助成率は、中小企業以外の場合は60%</strong>となります。※<strong>賃金助成は所定労働時間内に実施した場合</strong>のものです（所定労働時間外・休日の実施は対象外）。※助成額には<strong>1人1訓練あたりの限度額</strong>があります（10時間以上100時間未満の場合、中小企業で30万円）。※<strong>適用可否・助成率・助成額の最終的な判断は、貴社の社労士および管轄の労働局によります。</strong>当社はこの試算について何ら保証をするものではなく、また助成金の申請手続きの代行は行いません。</p>
+
+        <p class="gt" style="margin-top:22px">手続きの流れ ── <strong>お申し込みは、研修実施日の2か月前が目安です</strong></p>
+        <ol class="flow">
+          <li>
+            <span class="w">ご相談・お申し込み<span class="who ato">当社</span></span>
+            <p class="d">日程・受講人数・カリキュラムを決めます。申請書類の準備もここから始めます。</p>
+            <p class="lim">目安：研修実施日の <strong>2か月前</strong>まで</p>
+          </li>
+          <li>
+            <span class="w">社内のご準備（すでにお済みの場合は不要）<span class="who">貴社</span></span>
+            <p class="d">職業能力開発推進者の選任／事業内職業能力開発計画の策定・労働者への周知。</p>
+            <p class="lim">期限：<strong>3 の提出日まで</strong>に済んでいれば足ります</p>
+          </li>
+          <li>
+            <span class="w">職業訓練実施計画届を労働局へ提出<span class="who">貴社</span></span>
+            <p class="d">様式第1-1号ほか。当社は添付書類（受講案内・カリキュラム・時間割等）をお渡しします。</p>
+            <p class="lim hard">🔴 期限：訓練開始日の <strong>1か月前</strong>まで（遅れると対象外）</p>
+          </li>
+          <li>
+            <span class="w">研修の実施（2日間・10時間）<span class="who ato">当社</span></span>
+            <p class="d">受講者ごとに実訓練時間の8割以上のご受講が必要です。受講証明は当社が発行します。</p>
+          </li>
+          <li>
+            <span class="w">受講料のお支払い<span class="who">貴社</span></span>
+            <p class="d">助成金は、立て替えたものが後から戻る仕組みです。</p>
+            <p class="lim">期限：<strong>6 の申請日まで</strong>に全額のお支払いが済んでいること</p>
+          </li>
+          <li>
+            <span class="w">支給申請を労働局へ<span class="who">貴社</span></span>
+            <p class="d">様式第5号ほか。当社は実施状況に関する書類をお渡しします。</p>
+            <p class="lim hard">🔴 期限：<strong>訓練終了日の翌日から2か月以内</strong>（遅れると対象外）</p>
+          </li>
+          <li>
+            <span class="w">労働局の審査 ── 支給決定<span class="who">労働局</span></span>
+            <p class="d">審査には時間を要します。入金までの期間は労働局の状況によります。</p>
+          </li>
+        </ol>
+        <p class="note" style="margin-top:14px">※<strong>期限が厳格なのは 3 と 6 の2つ</strong>です。※<strong>助成金を使わない場合、この手続きは一切不要です</strong>（ご都合に合わせて実施できます）。</p>
         <p class="note">※助成の対象となる受講者は、雇用保険の被保険者に限られます（役員のみでのご受講は対象外となる場合があります）。また、受講者ごとに<strong>実訓練時間の8割以上の受講</strong>が必要です。実施場所は<strong>通常の業務と区別された会議室・研修室等</strong>である必要があり、オンラインで受講者が自宅等から参加される場合は、貴社に<strong>テレワーク勤務制度の定め</strong>があることが要件となります。適用可否・助成率・要件の最終判断は、貴社の社労士・管轄労働局にご確認ください。申請の主体は受講される企業様となります。</p>
       </div>
 
@@ -302,7 +390,8 @@ gtag('js',new Date());gtag('config','AW-18364059187');
         <dd>なります。当社のオンライン実施は録画教材ではなく、<strong>質疑応答を行いながら進める同時双方向の形式</strong>です。受講者が会社の会議室等から参加される場合、追加の要件はありません。<strong>自宅等から参加される場合は、貴社にテレワーク勤務制度の定め（労働協約・就業規則等）があること</strong>が要件となります。</dd>
 
         <dt>Q. お申し込みから実施まで、どれくらいかかりますか</dt>
-        <dd>助成金を活用される場合、<strong>訓練開始日の1か月前まで</strong>に計画届を労働局へ提出する必要があります。加えてその前提として、<strong>職業能力開発推進者の選任</strong>と<strong>事業内職業能力開発計画の策定・周知</strong>が必要です。未着手の場合はその期間も見て、2か月程度の余裕をみてご相談ください。助成金を使わない場合は、この限りではありません。</dd>
+        <!-- ⚠2026-08-21＝手続きの中身は上の「手続きの流れ」が正典。ここに書き写さない（両方に書くと片方が古くなる）。 -->
+        <dd>助成金を活用される場合は、<strong>研修実施日の2か月前</strong>を目安にご相談ください。厳格な期限は<strong>計画届（訓練開始日の1か月前まで）</strong>と<strong>支給申請（訓練終了日の翌日から2か月以内）</strong>の2つです。詳しくは上の<a href="#price">「手続きの流れ」</a>をご覧ください。助成金を使わない場合、これらの手続きは不要です。</dd>
 
         <dt>Q. 当日、欠席や遅刻が出た場合は</dt>
         <dd>助成の対象となるには、受講者ごとに<strong>実訓練時間の8割以上の受講</strong>が必要です。8割に満たない方はその方のみが対象外となり、他の受講者には影響しません。</dd>
@@ -328,7 +417,8 @@ gtag('js',new Date());gtag('config','AW-18364059187');
   <section id="contact" class="sec-soft">
     <div class="wrap contact">
       <h2>研修のご相談・お申し込み</h2>
-      <p>下記フォームよりご連絡ください。2営業日以内に、日程調整のご連絡を差し上げます。ご入力いただいた情報は、お問い合わせへの対応およびご案内のために利用します。当社は、法令に基づく場合を除き、ご本人の同意なく個人情報を第三者に提供しません。詳しくは<a href="../privacy.html">個人情報保護方針</a>をご覧ください。</p>
+      <p>下記フォームよりご連絡ください。2営業日以内に、日程調整のご連絡を差し上げます。ご入力いただいた情報は、お問い合わせへの対応およびご案内のために利用します。当社は、法令に基づく場合を除き、ご本人の同意なく個人データを第三者に提供しません。</p>
+      <p style="font-size:.95em">ご回答は、当社が業務で利用しているクラウドサービス「Google Workspace」に保管されます。<strong>日本における Google Workspace の契約先は、シンガポール共和国の Google Asia Pacific Pte. Ltd.（Google のアジア太平洋地域の法人）です。</strong>そのため個人情報保護法上は<strong>「外国にある第三者への提供」</strong>に当たり、送信にあたりご同意をお願いしています。ご回答は、上記の目的のために当社が利用します。これらの詳細（移転先の国名・同国の個人情報保護制度・Google が講ずる措置）は<a href="../privacy.html">個人情報保護方針</a>の第5条・第6条に、当社の安全管理措置は第8条に記載しています。</p>
       <!-- LP-B専用のGoogleフォーム（LP-Aとは別フォーム。2026-08-08 本人裁定／2026-08-18 設問仕様を更新）
            ⭐本欄がフォーム設問の仕様の正典。フォーム実物を本欄に合わせる（食い違いを見つけたら、まずここと突合する）
            設問＝①会社名 ②お名前 ③メールアドレス（必須）

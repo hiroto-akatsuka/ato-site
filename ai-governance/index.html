@@ -95,8 +95,10 @@ gtag('js',new Date());gtag('config','AW-18364059187');
   .contact p{margin:0 0 22px;color:var(--muted)}
   /* ⚠高さはGoogleの埋め込みスニペットが返す height に合わせる（2026-08-03時点=1593）＋余白。
      フォームの設問を増減したら実表示で再確認すること（不足すると iframe 内に縦スクロールが出て、
-     ユーザーが下の設問と送信ボタンに気づかない＝CVR直撃） */
-  .form-embed iframe{width:100%;height:1660px;border:0;display:block}
+     ユーザーが下の設問と送信ボタンに気づかない＝CVR直撃）
+     🔁2026-08-21＝外国third party提供の同意設問を1問追加する前提で 1660→1820（+160・1問≒141px）。
+     🔴⚠同意設問を追加するまでは余白が出るだけ（無害）。追加後に実表示で確認すること。 */
+  .form-embed iframe{width:100%;height:1820px;border:0;display:block}
   .form-fallback{font-size:13.5px;color:var(--muted);margin-top:16px}
 
   footer{padding:34px 0;text-align:center;color:var(--muted);font-size:13px}
@@ -110,7 +112,7 @@ gtag('js',new Date());gtag('config','AW-18364059187');
     table.menu th{width:auto;display:block;border-bottom:0;padding-bottom:2px}
     table.menu td{display:block;padding-top:2px}
     table.menu .price{width:auto}
-    .form-embed iframe{height:2000px}
+    .form-embed iframe{height:2160px}
   }
 </style>
 </head>
@@ -196,17 +198,17 @@ gtag('js',new Date());gtag('config','AW-18364059187');
         <tr>
           <th>生成AIリスク診断</th>
           <td>利用実態とシャドーAIの把握／規程・設定のレビュー／リスクマップと是正の優先順位</td>
-          <td class="price">無料簡易（30分＋所見1枚）<br>精密診断 50万円〜<br><span style="font-weight:400;color:var(--muted)">（必要に応じて現地対応）</span></td>
+          <td class="price">無料簡易（30分＋所見1枚）<br>精密診断 50万円〜<br><span style="font-weight:400;font-size:.86em;color:var(--muted)">（税込55万円〜）</span><br><span style="font-weight:400;color:var(--muted)">（必要に応じて現地対応）</span></td>
         </tr>
         <tr>
           <th>社外AI責任者（月額顧問）</th>
           <td>ベンダーに属さない中立の立場で、AIの導入・活用と統制の設計・意思決定を継続支援</td>
-          <td class="price">月50万円〜<br><span style="font-weight:400;color:var(--muted)">（関与の度合いに応じてご相談）</span></td>
+          <td class="price">月50万円〜<br><span style="font-weight:400;font-size:.86em;color:var(--muted)">（税込55万円〜）</span><br><span style="font-weight:400;color:var(--muted)">（関与の度合いに応じてご相談）</span></td>
         </tr>
         <tr>
           <th>生成AIツールの選定・調達支援</th>
           <td>要件整理／必要性の判断／ベンダー商談への同席／見積の妥当性判定／契約条件のレビュー。<strong>すでに提案・見積を受けている場合は、その査定のみでも承ります。</strong>当社はベンダーから仲介料・紹介料を一切受け取りません</td>
-          <td class="price">50万円～</td>
+          <td class="price">50万円～<br><span style="font-weight:400;font-size:.86em;color:var(--muted)">（税込55万円〜）</span></td>
         </tr>
         <tr>
           <th>AIプロジェクト伴走</th>
@@ -219,6 +221,12 @@ gtag('js',new Date());gtag('config','AW-18364059187');
           <td class="price"><a href="../ai-training/">詳細は<u>こちら</u></a></td>
         </tr>
       </table>
+      <!-- ⚠税表示について（2026-08-21 追加）
+           消費税法63条は「不特定かつ多数の者に課税資産の譲渡等を行う場合（専ら他の事業者に
+           課税資産の譲渡等を行う場合を除く。）」に総額表示を義務づけている＝B2B専業は括弧書きで除外〈実見・逐語〉。
+           当社の商品は法人向けゆえ義務の対象外の公算だが、⭐義務の有無と誤認の有無は別なので税込を併記する。
+           ⚠税率を変えるときは LP-B の料金表・試算と同時に直すこと。 -->
+      <p class="menu-note">表示価格はすべて税別です。括弧内は消費税（10%）を含む税込価格です。</p>
     </div>
   </section>
 
@@ -261,7 +269,8 @@ gtag('js',new Date());gtag('config','AW-18364059187');
   <section id="contact" class="sec-soft">
     <div class="wrap contact">
       <h2>無料診断のお申し込み・ご相談</h2>
-      <p>下記フォームよりお申し込みください。2営業日以内に、日程調整のご連絡を差し上げます。ご入力いただいた情報は、お問い合わせへの対応およびご案内のために利用します。当社は、法令に基づく場合を除き、ご本人の同意なく個人情報を第三者に提供しません。詳しくは<a href="../privacy.html">個人情報保護方針</a>をご覧ください。</p>
+      <p>下記フォームよりお申し込みください。2営業日以内に、日程調整のご連絡を差し上げます。ご入力いただいた情報は、お問い合わせへの対応およびご案内のために利用します。当社は、法令に基づく場合を除き、ご本人の同意なく個人データを第三者に提供しません。</p>
+      <p style="font-size:.95em">ご回答は、当社が業務で利用しているクラウドサービス「Google Workspace」に保管されます。<strong>日本における Google Workspace の契約先は、シンガポール共和国の Google Asia Pacific Pte. Ltd.（Google のアジア太平洋地域の法人）です。</strong>そのため個人情報保護法上は<strong>「外国にある第三者への提供」</strong>に当たり、送信にあたりご同意をお願いしています。ご回答は、上記の目的のために当社が利用します。これらの詳細（移転先の国名・同国の個人情報保護制度・Google が講ずる措置）は<a href="../privacy.html">個人情報保護方針</a>の第5条・第6条に、当社の安全管理措置は第8条に記載しています。</p>
       <!-- ✅LP-A専用のGoogleフォーム（6問・意図測定器）＝差し替え済み（2026-08-03）
            設問＝①会社名 ②お名前 ③メールアドレス（必須） ④従業員規模（〜100／100〜500／500〜）
            ⑤ご関心（複数選択）＝無料診断（30分）／精密診断を直接依頼したい／経営層・管理職向け研修／

@@ -80,7 +80,12 @@
 
   .contact p{margin:0 0 22px;color:var(--muted)}
   .mail{font-family:var(--serif);font-size:22px;color:var(--navy)}
-  .form-embed iframe{width:100%;height:1365px;border:0;display:block}
+  /* 🔴2026-08-21＝index.html と「同一のGoogleフォーム」を埋め込んでいるのに高さが 1365px と
+     485px 低かった（index.html は同じフォームに 1850px を当てていた）＝iframe 内に縦スクロールが出て
+     送信ボタンに気づかれないサイレント故障の疑い。⭐index.html と同じ値に揃える。
+     ⚠同意設問を1問追加する前提の値（+160px）を含む。追加後に実表示で確認すること。
+     ⭐規律＝同じフォームを2ページに埋めるなら、高さは必ず同じ値にする（片方だけ直すと必ずずれる）。 */
+  .form-embed iframe{width:100%;height:2010px;border:0;display:block}
   .form-fallback{font-size:13.5px;color:var(--muted);margin-top:16px}
 
   footer{padding:34px 0;text-align:center;color:var(--muted);font-size:13px}
@@ -91,7 +96,7 @@
     .headshot{width:120px;height:144px}
     .hero{padding:60px 0 48px}
     section{padding:48px 0}
-    .form-embed iframe{height:1650px}
+    .form-embed iframe{height:2460px}
   }
 </style>
 </head>
@@ -207,6 +212,8 @@
     <div class="wrap contact">
       <h2>Contact</h2>
       <p>Please get in touch using the form below. (The form is in Japanese.)</p>
+      <p style="font-size:.95em">The information you provide is used <strong>to respond to your inquiry and to contact you for that purpose, and to provide and inform you about our services</strong>.</p>
+      <p style="font-size:.95em">Your responses are stored in Google Workspace, the cloud service we use for our business. <strong>In Japan, the contracting entity for Google Workspace is Google Asia Pacific Pte. Ltd. of the Republic of Singapore (Google’s Asia-Pacific entity).</strong> Under the Act on the Protection of Personal Information this is therefore treated as a <strong>provision of personal data to a third party located in a foreign country</strong>, and we ask for your consent when you submit the form. Your responses are used by us for the purposes stated above. The details (the name of the destination country, information on that country’s personal information protection regime, and the measures taken by Google) are set out in Sections 5 and 6 of our <a href="privacy-en.html">Privacy Policy</a>; our security control measures are set out in Section 8.</p>
       <div class="form-embed">
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdoWGJpNNHRiP2pkGjrFq95xTIB309OFkMzCyQO3bqQtxxP5Q/viewform?embedded=true" title="Contact form" loading="lazy">Loading…</iframe>
       </div>
