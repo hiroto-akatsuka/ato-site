@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://atoinc.jp/ai-consulting/">
 <meta property="og:locale" content="ja_JP">
-<link rel="canonical" href="https://atoinc.jp/ai-governance/">
+<link rel="canonical" href="https://atoinc.jp/ai-consulting/">
 <!-- Google Ads タグ（2026-08-14 有効化・コンバージョンID AW-18364059187）
      ⚠このブロックを再びコメントアウトすると、末尾のイベントスニペットが gtag 未定義で黙って何もしなくなる
      （エラーも警告も出ずコンバージョン0件のまま配信が回る＝サイレント故障）。 -->
@@ -77,6 +77,8 @@ gtag('js',new Date());gtag('config','AW-18364059187');
   table.menu th,table.menu td{text-align:left;vertical-align:top;
        padding:14px 12px;border-bottom:1px solid var(--line)}
   table.menu th{color:var(--navy);font-weight:700;width:220px}
+  /* ⚠2026-08-25 から休眠：価格の列を削除したため .price / .menu-note を使う要素は本文に存在しない。
+     削除せず残しているのは「無料相談10件で価格の再掲を再判定」が生きているため（戻すときHTMLだけで済む）。 */
   table.menu .price{white-space:nowrap;color:var(--ink);font-weight:600;width:190px}
   .menu-note{font-size:12.5px;color:var(--muted);margin-top:12px}
 
@@ -88,9 +90,6 @@ gtag('js',new Date());gtag('config','AW-18364059187');
   .steps .t{font-weight:700;margin:0 0 2px}
   .steps .d{color:var(--muted);margin:0;font-size:14.5px}
 
-  .faq dt{font-weight:700;margin:22px 0 6px}
-  .faq dt:first-child{margin-top:0}
-  .faq dd{margin:0;color:var(--muted);font-size:14.5px}
 
   .contact p{margin:0 0 22px;color:var(--muted)}
   /* 高さ＝Googleの埋め込みスニペットが返す height ＋ 実表示ぶんの余白。
@@ -195,43 +194,6 @@ gtag('js',new Date());gtag('config','AW-18364059187');
       </div>
     </div>
   </section>
-  <!-- ⑤ メニュー（顧問を先頭に） -->
-  <section id="services">
-    <div class="wrap">
-      <h2>サービスと料金</h2>
-      <table class="menu">
-        <tr>
-          <th>社外AI責任者（月額顧問）</th>
-          <td>ベンダーに属さない中立の立場で、AIの導入・活用と統制の設計・意思決定を継続支援。技術の選定から、社内の進め方、体制づくりまで</td>
-          <td class="price">月50万円〜<br><span style="font-weight:400;font-size:.86em;color:var(--muted)">（税込55万円〜）</span><br><span style="font-weight:400;color:var(--muted)">（関与の度合いに応じてご相談）</span></td>
-        </tr>
-        <tr>
-          <th>AIツールの選定・調達支援</th>
-          <td>要件整理／必要性の判断／ベンダー商談への同席／見積の妥当性判定／契約条件のレビュー。<strong>すでに提案・見積を受けている場合は、その査定のみでも承ります。</strong>当社はベンダーから仲介料・紹介料を一切受け取りません</td>
-          <td class="price">50万円～<br><span style="font-weight:400;font-size:.86em;color:var(--muted)">（税込55万円〜）</span></td>
-        </tr>
-        <tr>
-          <th>AIプロジェクト伴走</th>
-          <td>AI関連プロジェクトにおいて業務委託先・再委託先としてプロジェクトに参画。ビッグデータ×AI×プライバシーのプロジェクトを、研究開発から事業化まで主導した代表の知見を最大限提供します。</td>
-          <td class="price">プロジェクトに応じてご相談</td>
-        </tr>
-        <tr>
-          <th><a href="../ai-governance/">生成AIリスク診断<br>（情報漏洩・利用統制）</a></th>
-          <td>利用実態とシャドーAIの把握／規程・設定のレビュー／リスクマップと是正の優先順位</td>
-          <td class="price"><a href="../ai-governance/">詳細は<u>こちら</u></a></td>
-        </tr>
-        <tr>
-          <th><a href="../ai-training/">経営層・管理職／実務担当者向け生成AIリスク・ガバナンス研修</a></th>
-          <td>操作方法の研修ではありません。リスクの構造・規程の作り方・統制の実務。</td>
-          <td class="price"><a href="../ai-training/">詳細は<u>こちら</u></a></td>
-        </tr>
-      </table>
-      <!-- ⚠税表示＝LP-A と同じ根拠（消費税法63条・B2B専業は括弧書きで除外／義務と誤認は別ゆえ税込を併記）。
-           ⚠税率を変えるときは LP-A・LP-B の料金表と同時に直すこと。 -->
-      <p class="menu-note">表示価格はすべて税別です。括弧内は消費税（10%）を含む税込価格です。</p>
-    </div>
-  </section>
-
   <!-- ⑥ 進め方 -->
   <section id="steps" class="sec-soft">
     <div class="wrap">
@@ -254,16 +216,41 @@ gtag('js',new Date());gtag('config','AW-18364059187');
     </div>
   </section>
 
-  <!-- ⑦ FAQ -->
-  <section id="faq">
+  <!-- ⑤ サービス（旧「サービスと料金」）
+       🔁2026-08-25＝①価格の列を削除 ②この節を steps の後ろ＝フォーム直前へ移動 ③見出しを「サービス」へ。
+          ⚠③はAIが一度「ご相談いただける内容」にしたが本人が同日訂正＝「無料相談で相談する内容」と読まれて混乱する。
+       🔁2026-08-25＝⑦FAQ節を削除（本人裁定・モバイル主体で内容量を削る）。⚠失った文言＝〈無料相談は全国対応〉
+          〈有料サービスは現地対応も可〉〈必要なタイミングでNDA締結〉。「オンライン」自体は hero と steps に残る。
+          出所＝2026-08-24 本人裁定の事前登録（発火条件は〈フォーム反映日以降のC3クリック300 かつ 回答0件〉だったが、
+          同日夜に本人が前倒しを裁定。理由はCVRの閾値でなく「モバイル実機で表が縦に割れて対応が読めない」という実機観察）。
+       🔁戻す条件＝無料相談を10件終えた時点で価格の再掲を再判定（暫定の非掲載を恒久化させないため・2026-08-24 本人発言の形式化）。
+       ⚠CSS の table.menu .price と .menu-note は削除せず休眠させてある＝価格を戻すときは HTML の td を戻すだけで足りる。
+       ⚠LP-A（ai-governance）・LP-B（ai-training）の料金表はまだ触っていない＝横展開は様子見の後（2026-08-25 本人）。 -->
+  <section id="services">
     <div class="wrap">
-      <h2>よくあるご質問</h2>
-      <dl class="faq">
-        <dt>Q. オンラインで完結しますか</dt>
-        <dd>無料相談はオンラインで実施します（全国対応）。顧問・選定支援など有料のサービスは、現地での対応も可能です。</dd>
-        <dt>Q. 秘密保持はどうなりますか</dt>
-        <dd>必要なタイミングで秘密保持契約を締結のうえ実施します。</dd>
-      </dl>
+      <h2>サービス</h2>
+      <table class="menu">
+        <tr>
+          <th>社外AI責任者（月額顧問）</th>
+          <td>ベンダーに属さない中立の立場で、AIの導入・活用と統制の設計・意思決定を継続支援。技術の選定から、社内の進め方、体制づくりまで</td>
+        </tr>
+        <tr>
+          <th>AIツールの選定・調達支援</th>
+          <td>要件整理／必要性の判断／ベンダー商談への同席／見積の妥当性判定／契約条件のレビュー。<strong>すでに提案・見積を受けている場合は、その査定のみでも承ります。</strong>当社はベンダーから仲介料・紹介料を一切受け取りません</td>
+        </tr>
+        <tr>
+          <th>AIプロジェクト伴走</th>
+          <td>AI関連プロジェクトにおいて業務委託先・再委託先としてプロジェクトに参画。ビッグデータ×AI×プライバシーのプロジェクトを、研究開発から事業化まで主導した代表の知見を最大限提供します。</td>
+        </tr>
+        <tr>
+          <th><a href="../ai-governance/">生成AIリスク診断<br>（情報漏洩・利用統制）</a></th>
+          <td>利用実態とシャドーAIの把握／規程・設定のレビュー／リスクマップと是正の優先順位</td>
+        </tr>
+        <tr>
+          <th><a href="../ai-training/">経営層・管理職／実務担当者向け生成AIリスク・ガバナンス研修</a></th>
+          <td>操作方法の研修ではありません。リスクの構造・規程の作り方・統制の実務。</td>
+        </tr>
+      </table>
     </div>
   </section>
 
