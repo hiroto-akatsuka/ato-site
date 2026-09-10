@@ -77,6 +77,9 @@ gtag('js',new Date());gtag('config','AW-18364059187');
   table.menu th,table.menu td{text-align:left;vertical-align:top;
        padding:14px 12px;border-bottom:1px solid var(--line)}
   table.menu th{color:var(--navy);font-weight:700;width:220px}
+  /* ⚠2026-09-10 から休眠：価格の列を削除したため .price / .menu-note を使う要素は本文に存在しない。
+     削除せず残しているのは「フックとして使う間は非掲載」という裁定が可逆であるため（戻すときHTMLだけで済む）。
+     ⭐LP-C（ai-consulting）は 2026-08-25 から同じ状態＝2面が同じ形になった。 */
   table.menu .price{white-space:nowrap;color:var(--ink);font-weight:600;width:190px}
   .menu-note{font-size:12.5px;color:var(--muted);margin-top:12px}
 
@@ -190,43 +193,43 @@ gtag('js',new Date());gtag('config','AW-18364059187');
     </div>
   </section>
 
-  <!-- ⑤ メニュー -->
+  <!-- ⑤ サービス（旧「サービスと料金」）
+       🔁2026-09-10 本人指示＝①価格の列（5行）を削除 ②見出しを「サービス」へ。出所＝本人（逐語）
+          「フックとして使うだけということを考えるとサービスと料金そのものを消すか、少なくとも料金は消しましょう」
+          「うまくいっていないものを変えるのに測定も何もありません」＝判断基準 2.9 の下位箇条（2026-09-05）どおり、
+          7⃣の測定窓の保全を理由に是正を遅らせない。⭐LP-C（ai-consulting）が 2026-08-25 に通した形の横展開。
+       ⬜未実施＝LP-Cで同時にやった〈この節をフォーム直前へ移動〉は当てていない（別裁定）。
+       ⚠LP-B（ai-training）の料金表・助成金試算は触っていない＝助成金の試算が価値提案そのものだから（別裁定）。 -->
   <section id="services">
     <div class="wrap">
-      <h2>サービスと料金</h2>
+      <h2>サービス</h2>
       <table class="menu">
         <tr>
           <th>生成AIリスク診断</th>
           <td>利用実態とシャドーAIの把握／規程・設定のレビュー／リスクマップと是正の優先順位</td>
-          <td class="price">無料簡易（30分＋所見1枚）<br>精密診断 50万円〜<br><span style="font-weight:400;font-size:.86em;color:var(--muted)">（税込55万円〜）</span><br><span style="font-weight:400;color:var(--muted)">（必要に応じて現地対応）</span></td>
         </tr>
         <tr>
           <th>社外AI責任者（月額顧問）</th>
           <td>ベンダーに属さない中立の立場で、AIの導入・活用と統制の設計・意思決定を継続支援</td>
-          <td class="price">月50万円〜<br><span style="font-weight:400;font-size:.86em;color:var(--muted)">（税込55万円〜）</span><br><span style="font-weight:400;color:var(--muted)">（関与の度合いに応じてご相談）</span></td>
         </tr>
         <tr>
           <th>生成AIツールの選定・調達支援</th>
           <td>要件整理／必要性の判断／ベンダー商談への同席／見積の妥当性判定／契約条件のレビュー。<strong>すでに提案・見積を受けている場合は、その査定のみでも承ります。</strong>当社はベンダーから仲介料・紹介料を一切受け取りません</td>
-          <td class="price">50万円～<br><span style="font-weight:400;font-size:.86em;color:var(--muted)">（税込55万円〜）</span></td>
         </tr>
         <tr>
           <th>AIプロジェクト伴走</th>
           <td>AI関連プロジェクトにおいて業務委託先・再委託先としてプロジェクトに参画。ビッグデータ×AI×プライバシーのプロジェクトを、研究開発から事業化まで主導した代表の知見を最大限提供します。</td>
-          <td class="price">プロジェクトに応じてご相談</td>
         </tr>
         <tr>
           <th><a href="../ai-training/">経営層・管理職／実務担当者向け<br>生成AIリスク・ガバナンス研修</a></th>
           <td>操作方法の研修ではありません。リスクの構造・規程の作り方・統制の実務。</td>
-          <td class="price"><a href="../ai-training/">詳細は<u>こちら</u></a></td>
         </tr>
       </table>
-      <!-- ⚠税表示について（2026-08-21 追加）
-           消費税法63条は「不特定かつ多数の者に課税資産の譲渡等を行う場合（専ら他の事業者に
-           課税資産の譲渡等を行う場合を除く。）」に総額表示を義務づけている＝B2B専業は括弧書きで除外〈実見・逐語〉。
-           当社の商品は法人向けゆえ義務の対象外の公算だが、⭐義務の有無と誤認の有無は別なので税込を併記する。
-           ⚠税率を変えるときは LP-B の料金表・試算と同時に直すこと。 -->
-      <p class="menu-note">表示価格はすべて税別です。括弧内は消費税（10%）を含む税込価格です。</p>
+      <!-- ⚠2026-09-10 から休眠：価格を非掲載にしたため税込併記の注記は本文から外した。
+           ⭐価格を戻す日にそのまま使う一次資料（消費税法63条・実見・逐語）＝「不特定かつ多数の者に課税資産の譲渡等を
+           行う場合（専ら他の事業者に課税資産の譲渡等を行う場合を除く。）」に総額表示を義務づけている＝B2B専業は括弧書きで除外。
+           当社の商品は法人向けゆえ義務の対象外の公算だが、⭐義務の有無と誤認の有無は別なので、戻すときは税込を併記する。
+           ⚠税率を変えるときは LP-B（ai-training）の料金表・試算と同時に直すこと（LP-Bは価格を掲載したままである）。 -->
     </div>
   </section>
 
