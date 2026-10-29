@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>管理職・経営層向け 生成AI研修｜株式会社アト</title>
+<meta name="description" content="生成AIの統制は、もはや現場や情報システム部門に任せきりにできない経営課題です。何を守るのか、どこから情報が漏れ、どこから侵入されるおそれがあるのか。管理職・経営層の皆さまが、生成AIを含めた全体像と要点を正確に押さえ、何を決めるべきかを判断できるようになるための講演形式の研修です。製品を販売しない立場で、技術の責任者である代表が直接登壇します。">
+<meta property="og:title" content="管理職・経営層向け 生成AI研修｜株式会社アト">
+<meta property="og:description" content="「当社は大丈夫か」に、根拠をもって答えられますか。生成AIの統制は、もはや現場や情報システム部門に任せきりにできない経営課題です。生成AIを含めた全体像と要点を正確に押さえ、何を決めるべきかを判断できるようになるための、管理職・経営層向けの講演形式の研修です。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://atoinc.jp/ai-briefing/">
+<meta property="og:locale" content="ja_JP">
+<link rel="canonical" href="https://atoinc.jp/ai-briefing/">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18364059187"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','AW-18364059187');
+</script>
+<style>
+  :root{
+    --ink:#1a1f29; --navy:#1b2c4b; --muted:#5b6472;
+    --line:#e3e6ec; --bg:#ffffff; --bg-soft:#f6f7f9; --gold:#b08d4f;
+    --serif:"Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif JP",serif;
+    --sans:"Yu Gothic","YuGothic","Hiragino Kaku Gothic ProN","Noto Sans JP","Meiryo",sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;color:var(--ink);background:var(--bg);font-family:var(--sans);
+       line-height:1.8;font-size:16px;-webkit-font-smoothing:antialiased;}
+  a{color:var(--navy);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px}
+
+  header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);
+         backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;
+       padding:14px 24px;max-width:880px;margin:0 auto;gap:16px;flex-wrap:wrap}
+  .brand{font-family:var(--serif);font-size:18px;letter-spacing:.06em;color:var(--ink);font-weight:600}
+  .nav .cta-mini{background:var(--navy);color:#fff;padding:8px 18px;border-radius:6px;font-size:13.5px}
+  .nav .cta-mini:hover{text-decoration:none;opacity:.92}
+
+  .hero{padding:76px 0 60px;border-bottom:1px solid var(--line)}
+  .kicker{font-size:13px;letter-spacing:.18em;color:var(--gold);font-weight:600;margin:0 0 18px}
+  .hero h1{font-family:var(--serif);font-size:clamp(27px,5.4vw,42px);line-height:1.4;
+           margin:0 0 22px;font-weight:600;letter-spacing:.02em}
+  .nb{display:inline-block}
+  .lead{font-size:clamp(15.5px,2.3vw,18px);color:var(--ink);max-width:800px;margin:0}
+  .lead .sub{display:block;margin-top:14px;font-size:15.5px}
+  .lead .sub strong{color:var(--navy)}
+  .cta{margin-top:32px;display:inline-block;background:var(--navy);color:#fff;
+       padding:14px 30px;border-radius:6px;font-size:15.5px;letter-spacing:.04em}
+  .cta:hover{text-decoration:none;opacity:.92}
+  .cta-note{margin-top:10px;font-size:13px;color:var(--muted)}
+
+  section{padding:60px 0;border-bottom:1px solid var(--line)}
+  .sec-soft{background:var(--bg-soft)}
+  h2{font-family:var(--serif);font-size:24px;font-weight:600;margin:0 0 26px;
+     letter-spacing:.04em;position:relative;padding-bottom:12px}
+  h2::after{content:"";position:absolute;left:0;bottom:0;width:46px;height:2px;background:var(--gold)}
+
+  .sit{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+  .sit li{position:relative;padding-left:30px;color:var(--ink)}
+  .sit li::before{content:"✓";position:absolute;left:2px;top:0;color:var(--navy);font-weight:700}
+
+  .diff{display:grid;gap:22px}
+  .diff .item{border-left:3px solid var(--navy);padding:4px 0 4px 18px}
+  .diff .t{font-weight:700;color:var(--ink);margin:0 0 4px;font-size:16.5px}
+  .diff .d{color:var(--ink);margin:0;font-size:15px}
+
+  p.body{margin:0 0 16px}
+  .msg{font-family:var(--serif);font-size:clamp(19px,3vw,23px);color:var(--navy);font-weight:600;line-height:1.6;margin:0 0 20px}
+
+  .five{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .five .card{background:var(--bg-soft);border:1px solid var(--line);border-radius:8px;padding:20px 22px}
+  .five .n{color:var(--gold);font-weight:700;font-size:13px;letter-spacing:.08em;margin:0 0 4px}
+  .five .t{font-weight:700;font-size:16.5px;margin:0 0 8px;color:var(--navy)}
+  .five .d{margin:0;font-size:14.5px}
+  .why{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 40px}
+  .why .t{font-family:var(--serif);font-size:18.5px;font-weight:600;color:var(--navy);margin:0 0 8px}
+  .why .t .n{color:var(--gold);margin-right:10px}
+  .why .d{margin:0;font-size:15px}
+
+  .who{border-bottom:1px solid var(--line);background:var(--bg-soft)}
+  .who .in{display:grid;grid-template-columns:96px 1fr;gap:20px;align-items:center;padding-top:22px;padding-bottom:22px}
+  .who .ph{width:96px;height:115px;border-radius:6px;background:#e9ecf1 center/cover no-repeat;
+           background-image:url('../profile.jpg');border:1px solid var(--line)}
+  .who .nm{font-weight:700;margin:0 0 4px}
+  .who .ln{margin:0;font-size:14.5px}
+
+  .profile{display:grid;grid-template-columns:200px 1fr;gap:32px;align-items:center}
+  .headshot{width:200px;height:240px;border-radius:8px;background:#e9ecf1 center/cover no-repeat;
+            background-image:url('../profile.jpg');border:1px solid var(--line)}
+  .cred{list-style:none;padding:0;margin:0;display:grid;gap:13px;font-size:15px}
+  .cred li{padding-left:20px;position:relative}
+  .cred li::before{content:"—";position:absolute;left:0;color:var(--gold)}
+
+  .intro{margin:0 0 28px}
+  ol.curr{list-style:none;counter-reset:ch;padding:0;margin:0;display:grid;gap:14px}
+  ol.curr li{counter-increment:ch;position:relative;padding-left:46px}
+  ol.curr li::before{content:counter(ch);position:absolute;left:0;top:2px;width:30px;height:30px;
+       border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;
+       justify-content:center;font-weight:700;font-size:14px}
+  ol.curr .t{font-weight:700;margin:0}
+  ol.curr .d{color:var(--ink);margin:0;font-size:15px}
+  ul.notes{margin:22px 0 0;padding-left:1.2em;font-size:15px;color:var(--ink)}
+  ul.notes li{margin:4px 0}
+
+  .pricebox{border:1px solid var(--line);border-radius:8px;background:#fff;padding:22px 26px}
+  .base{font-family:var(--serif);font-size:22px;color:var(--navy);font-weight:600;margin:0}
+  .base small{font-family:var(--sans);font-size:14px;font-weight:400;color:var(--muted);margin-left:8px}
+  .block-t{font-weight:700;margin:28px 0 10px}
+  ul.incl{margin:0;padding-left:1.2em;font-size:15px}
+  ul.incl li{margin:6px 0}
+  .pricebox .n{color:var(--ink);font-size:14.5px;margin:14px 0 0}
+  table.tbl{width:100%;border-collapse:collapse;font-size:14.5px}
+  table.tbl th,table.tbl td{text-align:left;vertical-align:top;padding:10px 12px 10px 0;border-bottom:1px solid var(--line)}
+  table.tbl thead th{color:var(--muted);font-weight:400;font-size:13.5px}
+  table.tbl tbody th{font-weight:400}
+  table.tbl td.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;padding-right:0}
+  table.tbl tr:last-child th,table.tbl tr:last-child td{border-bottom:0}
+
+  .faq dt{font-weight:700;margin:24px 0 6px}
+  .faq dt:first-child{margin-top:0}
+  .faq dd{margin:0;color:var(--ink);font-size:15px}
+
+  .contact p{margin:0 0 22px;color:var(--ink)}
+  .contact p.small{color:var(--muted)}
+
+  .form-embed iframe{width:100%;height:1760px;border:0;display:block}
+  .form-fallback{font-size:13.5px;color:var(--muted);margin-top:16px}
+
+  footer{padding:34px 0;text-align:center;color:var(--muted);font-size:13px}
+  .small{font-size:13px;color:var(--muted)}
+
+  @media(max-width:760px){ .five,.why{grid-template-columns:1fr} }
+  @media(max-width:640px){
+    .who .in{grid-template-columns:72px 1fr}
+    .who .ph{width:72px;height:86px}
+    .profile{grid-template-columns:1fr;justify-items:start}
+    .headshot{width:120px;height:144px}
+    .hero{padding:56px 0 44px}
+    section{padding:46px 0}
+    .pricebox{padding:20px}
+    .base small{display:block;margin:4px 0 0}
+    .form-embed iframe{height:2300px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="https://atoinc.jp/">株式会社アト</a>
+    <a class="cta-mini" href="#contact">研修の相談をする</a>
+  </div>
+</header>
+
+<main>
+
+  <div class="hero">
+    <div class="wrap">
+      <p class="kicker">管理職・経営層向け 生成AI研修（講演形式）</p>
+      <h1><span class="nb">「当社は大丈夫か」に、</span><br><span class="nb">根拠をもって</span><span class="nb">答えられますか。</span></h1>
+      <p class="lead">生成AIの統制は、もはや現場や情報システム部門に任せきりにできない経営課題です。事故を防ぐ仕組みを設計するのは経営層・管理職、それを日々運用するのは実務担当者です。<br>
+      何を守るのか、どこから情報が漏れ、どこから侵入されるおそれがあるのか。生成AIを含めた全体像と要点を正確に押さえ、経営層・管理職の皆さまが何を決めるべきかを判断できるようになるための、講演形式の研修です。
+      <span class="sub">製品を販売しない立場で、<strong>技術の責任者である代表が直接登壇します。</strong></span></p>
+      <a class="cta" href="#contact">研修の相談をする</a>
+      <p class="cta-note">2営業日以内にご連絡します。</p>
+    </div>
+  </div>
+
+  <div class="who">
+    <div class="wrap in">
+      <div class="ph" role="img" aria-label="赤塚 裕人"></div>
+      <div>
+        <p class="nm">登壇　赤塚 裕人（株式会社アト 代表取締役）</p>
+        <p class="ln">博士（情報理工学・東京大学）／京都橘大学 准教授（2027年4月就任予定。現在は同大学の客員研究員・非常勤講師）／国の経済安全保障プログラム（K Program）に参画／文部科学大臣表彰（科学技術分野）ほか受賞多数／元NTTドコモ：リアルタイム版モバイル空間統計・AI渋滞予知の研究開発・事業化・社会実装を主導</p>
+      </div>
+    </div>
+  </div>
+
+  <section id="pains">
+    <div class="wrap">
+      <h2>こんな状態ではありませんか</h2>
+      <ul class="sit">
+        <li>生成AIのリスクとして、<strong>何を、どこまで気にすべきか</strong>の基準がない</li>
+        <li>対策はしているつもりだが、<strong>今のままで十分なのかがわからない</strong></li>
+        <li>「使ってよい／だめ」の線引きを決めたいが、<strong>決めるための材料がない</strong></li>
+        <li>部下やベンダーから聞かれたときに、<strong>自分の言葉で答えられない</strong></li>
+        <li>ベンダーの「セキュリティ対応済み」という説明を、<strong>妥当か判断できない</strong></li>
+        <li>全社で生成AIを使わせたいが、<strong>その前に決めておくべきこと</strong>が決まっていない</li>
+        <li>監査・取引先から、<strong>利用ルールと教育の記録</strong>を問われている</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="view" class="sec-soft">
+    <div class="wrap">
+      <h2>生成AIで、守るものは変わりません</h2>
+      <p class="msg">変わったのは、入口が増えたことです。</p>
+      <p class="body">守るべきものは、お客様の情報・個人情報・機密情報、そして事業を支えるシステムと、これまでと変わりません。社員が業務の情報を外部のAIサービスに入力すること、AIに社内のシステムやデータへの接続を許すこと。生成AIによって、こうした新たな入口が加わりました。また、攻撃する側がAIを使った事例も確認されています。</p>
+      <p class="body" style="margin:0">そのため、生成AIへの対策も、サイバーセキュリティの全体像の中で考えることが大切です。守るものと入口の全体像の中に生成AIを位置づけることで、経営層が決めるべきことが明確になります。経営層に求められるのは、技術の細部を理解することではありません。全体像と要点を正確に押さえ、ベンダーの提案や日々の報道が全体のどの部分の話なのかを見分けられるようになることです。そのうえで、自社がそれぞれの点にどのような対策をとっているかを把握し、どこに重点を置いて対策するか、それをどのように経営課題として位置づけ、体制を構築するかを判断できるようになる必要があります。</p>
+    </div>
+  </section>
+
+  <section id="scope">
+    <div class="wrap">
+      <h2>全体像として把握する必要があること</h2>
+      <div class="five">
+        <div class="card"><p class="n">01</p><p class="t">守るもの</p><p class="d">事業を止めないために守るべきシステムと、漏えいさせてはならない情報は何か。どこに、どれだけ保有しているか。持つ必要のない情報を持ち続けていないか。</p></div>
+        <div class="card"><p class="n">02</p><p class="t">入口</p><p class="d">攻撃者が侵入するおそれのある経路と、情報が社外へ出ていくおそれのある経路。外部に公開しているシステムや通信機器、利用している外部サービス、取引先・委託先とのつながり、社員の生成AIの利用、業務に組み込んだAI。</p></div>
+        <div class="card"><p class="n">03</p><p class="t">今ある対策</p><p class="d">契約・設定・体制で足りているところと、足りないところ。すでにお使いの製品やサービスの設定で対応できることも少なくありません。</p></div>
+        <div class="card"><p class="n">04</p><p class="t">対策が効いているかの確かめ方</p><p class="d">誰が、いつ、何を基準に点検し、どのような記録を残すか。</p></div>
+        <div class="card"><p class="n">05</p><p class="t">起きた際の備え</p><p class="d">誰が判断して止め、法令や契約に基づいて誰に報告し、どのように事業を再開するか。</p></div>
+        <div class="card"><p class="n">06</p><p class="t">経営層が決めること</p><p class="d">どこまでのリスクを許容するか、何に優先して投資するか、誰が責任を持ち、各部門がどの役割を担うか。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contents" class="sec-soft">
+    <div class="wrap">
+      <h2>研修の内容</h2>
+      <p class="msg">細かい技術や操作方法ではなく、全体像と要点を正確に押さえます。</p>
+      <p class="body">ベンダーの提案や日々の報道が、全体のどの部分の話なのかを見分けるための「地図」をお渡しし、自社が何を決めるべきかを持ち帰っていただきます。操作方法を教える「使い方」の研修ではなく、何を守り、どこまで守り、どう守るかを扱う「事故を防ぐ側」の研修です。扱うのは、リスクの構造・規程の作り方・統制の実務です。</p>
+      <p class="block-t">構成の例</p>
+      <ol class="curr">
+        <li><p class="t">何が変わり、何が変わらないか</p><p class="d">守る対象の多くは変わりません。今ある対策の延長で足りる部分、追加の対応が要る部分、別に考える必要がある部分（AIの出力と、AIによる実行）を切り分けます。</p></li>
+        <li><p class="t">そもそも使うべきか</p><p class="d">扱うデータ、社外や個人への影響、失敗を取り戻せるか、AIがどこまで関わるか、の4つで判断します。</p></li>
+        <li><p class="t">実際に何を使い、何が起こり得るか</p><p class="d">誰が、どのAIを、どのデータで、何に使っているか。入力・出力・実行の3つの方向のリスク。</p></li>
+        <li><p class="t">誰が、どこまでを許容するか</p><p class="d">法律・契約が決める最低線と、その上の経営の判断。最低限決めておくこと。経営・管理職・IT・法務・利用者のそれぞれの役割。</p></li>
+        <li><p class="t">今ある対策を活かし、足りないところを守る</p><p class="d">契約と設定の確認から始め、残った穴にだけ追加の投資をします。</p></li>
+        <li><p class="t">対策が効いているとどう分かるか</p><p class="d">「人が確認する」には、誰が、何を基準に、どんな記録を残すかまで決めておく必要があります。</p></li>
+        <li><p class="t">起きたらどう止め、戻すか</p></li>
+        <li><p class="t">持ち帰っていただく問い</p></li>
+      </ol>
+      <ul class="notes">
+        <li>業種に合わせて事例を選び、質疑の時間を十分にとります。</li>
+        <li>社員一人ひとりが文書作成などで使う使い方と、業務の流れそのものに組み込む使い方のどちらに重きを置くかは、事前のお打合せで伺って決めます。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="strengths">
+    <div class="wrap">
+      <h2>アトの強み</h2>
+      <div class="why">
+        <div><p class="t"><span class="n">01</span>製品もライセンスも販売しない</p><p class="d">セキュリティ製品やAIツールを販売せず、ベンダーから仲介料・紹介料も受け取りません。だから、今ある仕組みで足りるところは足りる、今は入れなくてよいものは入れなくてよい、とそのままお伝えできます。</p></div>
+        <div><p class="t"><span class="n">02</span>生成AIを、仕組みの内側から説明できる</p><p class="d">AIの研究開発に携わってきた立場から、AIのサービスやAIエージェントが内部で何をしているかを踏まえて、リスクと対策をご説明します。</p></div>
+        <div><p class="t"><span class="n">03</span>個人のデータを守る技術の専門家</p><p class="d">差分プライバシーなど、個人のデータを守りながら使う技術を専門とし、国の経済安全保障プログラム（K Program）にも参画しています。</p></div>
+        <div><p class="t"><span class="n">04</span>技術の責任者が、経営の言葉でお伝えする</p><p class="d">技術の細部ではなく、経営層・管理職が何を決めるべきかに絞ってお話しします。研修会社の派遣講師ではなく、技術の責任者である代表の赤塚が直接登壇します。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="profile" class="sec-soft">
+    <div class="wrap">
+      <h2>登壇者</h2>
+      <div class="profile">
+        <div class="headshot" role="img" aria-label="赤塚 裕人"></div>
+        <ul class="cred">
+          <li><strong>赤塚 裕人</strong>（株式会社アト 代表取締役）</li>
+          <li><strong>博士（情報理工学・東京大学）</strong></li>
+          <li><strong>専門：</strong>AI・データ技術の研究開発と社会実装。特に、個人のデータを守りながら使う技術（プライバシー保護）</li>
+          <li><strong>京都橘大学 准教授</strong>（2027年4月就任予定。現在は同大学の客員研究員・非常勤講師）</li>
+          <li><strong>元NTTドコモ（2013–2025）</strong>：リアルタイム版モバイル空間統計・AI渋滞予知の研究開発・事業化・社会実装を主導</li>
+          <li><strong>文部科学大臣表彰（科学技術分野）</strong> ／ 前島密賞 ／ 情報処理学会 業績賞</li>
+          <li><strong>国の経済安全保障プログラム「経済安全保障重要技術育成プログラム（K Program）」に参画</strong>（内閣府・文部科学省・経済産業省所管）　<a href="https://www.sdc4society.org/member/" target="_blank" rel="noopener">参画者一覧</a></li>
+          <li>査読論文・登録特許 多数 ／ 日本経済新聞・毎日新聞・BBC World News・テレビ東京 ワールドビジネスサテライト等で報道</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="price">
+    <div class="wrap">
+      <h2>料金</h2>
+      <div class="pricebox">
+        <p class="base">基本料金：50万円（税別）／55万円（税込）<small>オンラインでの研修1回</small></p>
+
+        <p class="block-t">基本料金に含まれるもの</p>
+        <ul class="incl">
+          <li>研修（2時間枠・講演形式。ケーススタディの解説と質疑を含みます。時間は2時間以内で、ご希望に合わせて調整します）</li>
+          <li>必要に応じて、事前のお打合せ1回（オンライン・1時間程度）</li>
+          <li>業種に合わせた事例の選定と、事前のお打合せで伺った貴社の状況（お使いの生成AIのツール、日頃お困りの場面など）に合わせた構成</li>
+          <li>研修資料の作成と、PDFでのお渡し</li>
+          <li>講演の内容の書き起こし（テキスト）のお渡し（質疑応答は含みません）</li>
+          <li>録画の社内での後日視聴（研修日から1年間）</li>
+        </ul>
+        <p class="n">当日の運営（会議の設定、録画、出欠の管理など）は、貴社で行っていただきます。受講者の人数による料金の違いはありません。</p>
+
+        <p class="block-t">金額が変わる場合</p>
+        <table class="tbl">
+          <thead><tr><th></th><th class="num" style="text-align:right">追加の金額</th></tr></thead>
+          <tbody>
+            <tr><th>現地での開催（会場とオンラインの同時開催を含む）</th><td class="num">＋20万円（税別）／22万円（税込）</td></tr>
+            <tr><th colspan="2" style="color:var(--muted);font-size:13.5px;padding-top:0">国内一律・交通費を含みます</th></tr>
+            <tr><th>同じ内容での追加開催</th><td class="num">1回につき ＋30万円（税別）／33万円（税込）</td></tr>
+            <tr><th colspan="2" style="color:var(--muted);font-size:13.5px;padding-top:0">現地で別の日に開催する場合は、追加の回ごとに現地の ＋20万円がかかります</th></tr>
+          </tbody>
+        </table>
+
+        <p class="block-t">料金の例</p>
+        <table class="tbl">
+          <thead><tr><th>条件</th><th class="num" style="text-align:right">税別</th><th class="num" style="text-align:right">税込</th></tr></thead>
+          <tbody>
+            <tr><th>オンライン・1回</th><td class="num">50万円</td><td class="num">55万円</td></tr>
+            <tr><th>現地・1回</th><td class="num">70万円</td><td class="num">77万円</td></tr>
+            <tr><th>オンライン・2回</th><td class="num">80万円</td><td class="num">88万円</td></tr>
+            <tr><th>現地・同じ日に2回</th><td class="num">100万円</td><td class="num">110万円</td></tr>
+            <tr><th>現地・別の日に2回</th><td class="num">120万円</td><td class="num">132万円</td></tr>
+          </tbody>
+        </table>
+
+        <p class="block-t">上記以外のご要望</p>
+        <p style="margin:0;font-size:15px">研修時間や、内容のさらなるカスタマイズなど、上記以外のご要望にも対応します。お気軽にご相談ください。</p>
+
+        <p class="n">表示価格は税別です（括弧内・右列は消費税10%を含む税込価格）。<br>お支払い：研修を実施した月の月末締め、翌月末までにお振込みください。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="materials" class="sec-soft">
+    <div class="wrap">
+      <h2>資料・書き起こし・録画の扱い</h2>
+      <div class="diff">
+        <div class="item">
+          <p class="t">研修資料</p>
+          <p class="d">PDFでお渡しします。貴社の役員・従業員の皆さまへの再配布は、期間の制限なく、追加費用なしで可能です。</p>
+        </div>
+        <div class="item">
+          <p class="t">書き起こし</p>
+          <p class="d">講演の内容の書き起こしを、研修後にテキストでお渡しします。質疑応答の内容は含みません。貴社の社内でのAIの利用（生成AIへの入力、社内の検索やAIアシスタントが参照するデータ、AIの学習など）に、期間の制限なく、追加費用・事前のご相談なしにお使いいただけます。社外（グループ会社を含みます）への公開・配布をご希望の場合は、事前にご相談ください。</p>
+        </div>
+        <div class="item">
+          <p class="t">録画</p>
+          <p class="d">録画は貴社で行っていただきます。研修日から1年間、貴社の役員・従業員の皆さまが社内で視聴できます。社外の方が視聴できる形での公開はご遠慮ください。</p>
+        </div>
+        <div class="item">
+          <p class="t">二次利用</p>
+          <p class="d">研修資料・録画をそのまま用いる社内研修や社内説明は、上記の対象・期間の範囲内で、追加費用・事前のご相談なしにご利用いただけます。資料の編集・抜粋や録画の編集・切り出し、別の教材への組み込み、社外（グループ会社を含みます）への公開・配布をご希望の場合は、事前にご相談ください。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="flow">
+    <div class="wrap">
+      <h2>ご依頼の流れ</h2>
+      <ol class="curr">
+        <li><p class="t">フォームからご相談</p><p class="d">ご検討の段階からご相談ください。フォームの送信は、お申し込みではありません。</p></li>
+        <li><p class="t">ご連絡・ご要望の確認</p><p class="d">2営業日以内にご連絡し、研修の目的、対象の方、ご希望の日程などを伺います。</p></li>
+        <li><p class="t">お見積・ご発注</p><p class="d">内容と金額をまとめたお見積書をお送りします。ご確認のうえ、ご発注のご連絡をいただいた時点で、正式なお申し込みとなります。取引先登録など、貴社の手続きにも対応します。</p></li>
+        <li><p class="t">事前のお打合せ（必要に応じて）</p><p class="d">オンラインで1回、貴社の状況と研修の重点を伺い、構成に反映します。</p></li>
+        <li><p class="t">研修の実施</p></li>
+        <li><p class="t">研修資料と書き起こしのお渡し</p><p class="d">研修資料（PDF）と、講演の内容の書き起こし（テキスト）をお渡しします。</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="faq" class="sec-soft">
+    <div class="wrap">
+      <h2>よくあるご質問</h2>
+      <dl class="faq">
+        <dt>Q. 受講者の人数で料金は変わりますか</dt>
+        <dd>変わりません。オンラインでの研修であれば、人数の上限もありません。</dd>
+
+        <dt>Q. 自社の社内ルールや事例を踏まえた内容にできますか</dt>
+        <dd>事前のお打合せで、貴社の生成AIの利用ルールや日頃お困りの場面を伺い、内容に反映します。社内資料をお預かりする場合は、秘密保持契約を締結します。さらに踏み込んだカスタマイズは、お気軽にご相談ください。</dd>
+
+        <dt>Q. 取引先登録や、情報管理体制の審査には対応できますか</dt>
+        <dd>対応します。当社は東証プライム上場企業のグループ会社と複数の取引があり、取引先登録や、委託先としての情報管理体制の審査（評価基準への回答、確認書、誓約書など）に必要なことを熟知し、これまでに何度も対応してきました。</dd>
+
+        <dt>Q. どのオンライン会議ツールで実施できますか</dt>
+        <dd>貴社がお使いのオンライン会議ツールで実施します。</dd>
+
+        <dt>Q. 自社の利用ルールそのものを作ってほしいのですが</dt>
+        <dd>研修には、貴社のルールや体制を作る作業は含みません。ルールに盛り込むべき点の整理やたたき台のご用意は、<a href="../ai-governance/">診断・顧問</a>としてお受けします。</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact">
+      <h2>研修のご相談</h2>
+      <p>下記フォームよりご連絡ください。2営業日以内にご連絡します。ご検討の段階からご相談ください。フォームの送信は、お申し込みではありません。</p>
+      <p class="small">個人情報の取扱いは<a href="../privacy.html">個人情報保護方針</a>をご覧ください。</p>
+
+      <div class="form-embed">
+        <iframe id="leadform" src="https://docs.google.com/forms/d/e/1FAIpQLSebDxRDdMItQgnfxJfJ01G8BOIjxYsPoN6fr8Pr3h0ibGM9TQ/viewform?embedded=true" title="研修のご相談フォーム" loading="lazy">読み込んでいます…</iframe>
+      </div>
+      <p class="form-fallback">フォームがうまく表示されない場合は、<a href="https://docs.google.com/forms/d/e/1FAIpQLSebDxRDdMItQgnfxJfJ01G8BOIjxYsPoN6fr8Pr3h0ibGM9TQ/viewform" target="_blank" rel="noopener">こちらのフォーム</a>からご入力ください。</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="small"><a href="../privacy.html">個人情報保護方針</a>　｜　<a href="https://atoinc.jp/">会社概要</a></p>
+    <p class="small">「モバイル空間統計」は株式会社NTTドコモの登録商標です。</p>
+    <p class="small">© 2026 株式会社アト（Ato Inc.）</p>
+  </div>
+</footer>
+
+<script>
+
+(function(){
+  var n = 0, f = document.getElementById('leadform');
+  if (!f) return;
+  f.addEventListener('load', function(){
+    n++;
+    if (n > 1 && typeof gtag === 'function') {
+      gtag('event', 'conversion', {'send_to': 'AW-18364059187/5GfqCKbswOEcELOc1bRE'});
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

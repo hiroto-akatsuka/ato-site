@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>株式会社アト｜AIの研究開発・技術検証から事業化・社会実装まで</title>
+<meta name="description" content="ベンダーに属さない技術顧問として、AI・データ技術の研究開発、プライバシー保護技術、生成AIの活用と統制の領域で、研究開発・技術検証から事業化・社会実装まで、試行（PoC）で終わらせずに伴走します。OJTによる若手技術者の育成にも対応します。株式会社アト 代表取締役・赤塚裕人（博士（情報理工学・東京大学）／京都橘大学 准教授 2027年4月就任予定）。">
+<meta property="og:title" content="株式会社アト｜AIの研究開発・技術検証から事業化・社会実装まで">
+<meta property="og:description" content="ベンダーに属さない技術顧問として、AI・データ技術の研究開発、プライバシー保護技術、生成AIの活用と統制の領域で、研究開発・技術検証から事業化・社会実装まで、試行（PoC）で終わらせずに伴走します。OJTによる若手技術者の育成にも対応します。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://atoinc.jp/">
+<meta property="og:locale" content="ja_JP">
+<link rel="canonical" href="https://atoinc.jp/">
+<style>
+  :root{
+    --ink:#1a1f29; --navy:#1b2c4b; --muted:#5b6472;
+    --line:#e3e6ec; --bg:#ffffff; --bg-soft:#f6f7f9; --gold:#b08d4f;
+    --serif:"Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif JP",serif;
+    --sans:"Yu Gothic","YuGothic","Hiragino Kaku Gothic ProN","Noto Sans JP","Meiryo",sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;color:var(--ink);background:var(--bg);font-family:var(--sans);
+       line-height:1.8;font-size:16px;-webkit-font-smoothing:antialiased;}
+  a{color:var(--navy);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+
+  header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);
+         backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;
+       padding:14px 32px;max-width:1120px;margin:0 auto;gap:16px;flex-wrap:wrap}
+  .brand{font-family:var(--serif);font-size:18px;letter-spacing:.06em;color:var(--ink);font-weight:600}
+  .menu{display:flex;gap:20px;align-items:center;font-size:13.5px;flex-wrap:wrap}
+  .menu a{color:var(--muted)}
+  .menu .lang{border:1px solid var(--line);border-radius:4px;padding:2px 8px;color:var(--ink)}
+
+  .hero{padding:92px 0 72px;border-bottom:1px solid var(--line)}
+  .kicker{font-size:13px;letter-spacing:.18em;color:var(--gold);font-weight:600;margin:0 0 18px}
+  .hero h1{font-family:var(--serif);font-size:clamp(30px,5vw,48px);line-height:1.3;
+           margin:0 0 24px;font-weight:600;letter-spacing:.02em}
+  .hero h1 .nb{display:inline-block}
+  .lead{font-size:clamp(16px,2.2vw,19px);color:var(--ink);margin:0}
+  .lead .nb{display:inline-block}
+  .cta{margin-top:34px;display:inline-block;background:var(--navy);color:#fff;
+       padding:13px 28px;border-radius:6px;font-size:15px;letter-spacing:.04em}
+  .cta:hover{text-decoration:none;opacity:.92}
+
+  section{padding:72px 0;border-bottom:1px solid var(--line)}
+  .sec-soft{background:var(--bg-soft)}
+  h2{font-family:var(--serif);font-size:26px;font-weight:600;margin:0 0 28px;
+     letter-spacing:.04em;position:relative;padding-bottom:12px}
+  h2::after{content:"";position:absolute;left:0;bottom:0;width:46px;height:2px;background:var(--gold)}
+  .sec-lead{margin:-8px 0 28px;color:var(--ink);max-width:820px}
+  h3{font-size:17px;margin:0 0 14px;color:var(--navy)}
+
+  .sit{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+  .sit li{position:relative;padding-left:26px;color:var(--ink)}
+  .sit li::before{content:"";position:absolute;left:4px;top:13px;width:7px;height:7px;
+                  background:var(--navy);border-radius:50%}
+
+  .svc{display:grid;gap:22px;grid-template-columns:repeat(3,1fr)}
+  .svc .item{border-left:3px solid var(--navy);padding:4px 0 4px 18px}
+  .svc .t{font-weight:700;color:var(--ink);margin:0 0 4px;font-size:16.5px}
+  .svc .d{color:var(--muted);margin:0;font-size:14.5px}
+
+  table.mx{width:100%;border-collapse:collapse;background:#fff;font-size:15px;table-layout:fixed}
+  table.mx thead th.corner{width:200px}
+  table.mx th,table.mx td{border:1px solid var(--line);padding:18px 20px;vertical-align:top;text-align:left}
+  table.mx thead th{background:var(--navy);color:#fff;font-weight:700;font-size:16px}
+  table.mx thead th .w{display:block;font-weight:400;font-size:13.5px;opacity:.9;margin-top:4px;line-height:1.6}
+  table.mx thead th.corner{background:var(--bg-soft);border-color:var(--line)}
+  table.mx tbody th{width:200px;color:var(--navy);font-size:16.5px;font-weight:700;background:#fbfbfc}
+  table.mx tbody th .w{display:block;font-weight:400;font-size:13.5px;color:var(--muted);margin-top:4px}
+  .mx-legend{display:none}
+  .w2{display:block;margin-top:8px}
+  .mx-note{margin:14px 0 0;font-size:15px;color:var(--ink)}
+  .keep{margin:26px 0 8px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:6px;padding:18px 22px}
+  .keep .t{font-family:var(--serif);font-weight:600;color:var(--navy);font-size:19px;margin:0 0 6px}
+  .keep .d{margin:0;font-size:15.5px;color:var(--ink)}
+
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:24px 26px}
+  .card .tag{display:inline-block;font-size:12.5px;color:var(--gold);font-weight:700;letter-spacing:.06em;margin:0 0 10px}
+  .card .q{font-weight:700;font-size:16.5px;margin:0 0 12px;line-height:1.6}
+  .card .a{margin:0;color:var(--ink);font-size:15px}
+
+  .why{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 40px}
+  .why .t{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--navy);margin:0 0 8px}
+  .why .t .n{color:var(--gold);margin-right:10px}
+  .why .d{margin:0;font-size:15px}
+
+  .who{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-soft)}
+  .who .in{display:grid;grid-template-columns:96px 1fr;gap:20px;align-items:center;padding-top:22px;padding-bottom:22px}
+  .who .ph{width:96px;height:115px;border-radius:6px;background:#e9ecf1 center/cover no-repeat;
+           background-image:url('profile.jpg');border:1px solid var(--line)}
+  .who .nm{font-weight:700;margin:0 0 4px}
+  .who .ln{margin:0;font-size:14.5px}
+
+  .profile{display:grid;grid-template-columns:200px 1fr;gap:36px;align-items:center}
+  .headshot{width:200px;height:240px;border-radius:8px;background:#e9ecf1 center/cover no-repeat;
+            background-image:url('profile.jpg');border:1px solid var(--line);
+            display:flex;align-items:flex-end;justify-content:center;color:#9aa3b2;
+            font-size:12px;letter-spacing:.1em;padding-bottom:10px}
+  .cred{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+  .cred li{padding-left:20px;position:relative}
+  .cred li::before{content:"—";position:absolute;left:0;color:var(--gold)}
+  .cred .sum{font-family:var(--serif);color:var(--navy);font-weight:600}
+
+  .flow-wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+  ol.flow{list-style:none;counter-reset:f;padding:0;margin:0;display:grid;gap:16px}
+  ol.flow li{counter-increment:f;position:relative;padding-left:46px}
+  ol.flow li::before{content:counter(f);position:absolute;left:0;top:2px;width:30px;height:30px;border-radius:50%;
+                     background:var(--navy);color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+  ol.flow .t{font-weight:700;margin:0}
+  .nw{white-space:nowrap}
+  ol.flow .d{margin:0;color:var(--ink);font-size:14.5px}
+  .after .item{margin:0 0 18px}
+  .after .t{font-weight:700;margin:0 0 4px}
+  .after .d{margin:0;color:var(--ink);font-size:14.5px}
+
+  dl.faq{margin:0;display:grid;gap:22px;max-width:900px}
+  dl.faq dt{font-weight:700}
+  dl.faq dt::before{content:"Q. ";color:var(--gold)}
+  dl.faq dd{margin:6px 0 0;color:var(--ink);font-size:15px}
+  dl.faq dd ul.fee{margin:6px 0 8px;padding-left:1.2em}
+  dl.faq dd ul.fee li{margin:2px 0}
+
+  table.company{width:100%;border-collapse:collapse;font-size:15px}
+  table.company th,table.company td{text-align:left;vertical-align:top;
+       padding:13px 12px;border-bottom:1px solid var(--line)}
+  table.company th{width:120px;color:var(--muted);font-weight:600;white-space:nowrap}
+
+  .contact p{margin:0 0 22px;color:var(--muted)}
+
+  .form-embed iframe{width:100%;height:1650px;border:0;display:block}
+  .form-fallback{font-size:13.5px;color:var(--muted);margin-top:16px}
+
+  footer{padding:34px 0;text-align:center;color:var(--muted);font-size:13px}
+  .small{font-size:13px;color:var(--muted)}
+
+  @media(max-width:860px){
+    .cards,.why,.flow-wrap,.svc{grid-template-columns:1fr}
+  }
+  @media(max-width:640px){
+    .wrap{padding:0 20px}
+    .nav{padding:12px 20px}
+    .profile{grid-template-columns:1fr;justify-items:start}
+    .headshot{width:120px;height:144px}
+    .who .in{grid-template-columns:72px 1fr}
+    .who .ph{width:72px;height:86px}
+    .hero{padding:60px 0 48px}
+    section{padding:52px 0}
+    .form-embed iframe{height:1950px}
+
+    table.mx,table.mx tbody,table.mx tr,table.mx th,table.mx td{display:block;width:100%}
+    table.mx thead{display:none}
+    .mx-legend{display:grid;gap:12px;margin:0 0 20px}
+    .mx-legend div{background:#fff;border:1px solid var(--line);border-left:3px solid var(--navy);border-radius:6px;padding:12px 16px;font-size:14.5px}
+    .mx-legend .t{font-weight:700;color:var(--navy);margin:0 0 2px}
+    table.mx tr{margin:0 0 18px;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#fff}
+    table.mx th,table.mx td{border:0;border-top:1px solid var(--line)}
+    table.mx tbody th{border-top:0;background:var(--navy);color:#fff;width:100%}
+    table.mx tbody th .w{color:#dfe4ec}
+    table.mx td::before{content:attr(data-label);display:block;font-weight:700;color:var(--navy);font-size:13px;margin-bottom:4px}
+  }
+  @media(max-width:389px){
+    .form-embed iframe{height:2140px}
+  }
+  @media(max-width:359px){
+    .form-embed iframe{height:2310px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">株式会社アト</div>
+    <nav class="menu">
+      <a href="#services">支援内容</a>
+      <a href="#strengths">アトの強み</a>
+      <a href="#flow">ご依頼の流れ</a>
+      <a href="#faq">よくあるご質問</a>
+      <a href="#company">会社概要</a>
+      <a href="#contact">お問い合わせ</a>
+      <a class="lang" href="en.html">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="hero">
+    <div class="wrap">
+      <p class="kicker">ベンダーに属さない AI活用・統制の技術顧問</p>
+      <h1><span class="nb">AIの研究開発・</span><span class="nb">技術検証から、</span><br><span class="nb">事業化・</span><span class="nb">社会実装まで。</span></h1>
+      <p class="lead"><span class="nb">事業として成り立つかを起点に、</span><span class="nb">何を検証するかを決定し、</span><span class="nb">試行（PoC）で終わらせずに</span><span class="nb">事業化まで伴走します。</span><br><span class="nb">製品もライセンスも販売しない立場で、</span><span class="nb">御社のAIプロジェクトに技術の責任者として入ります。</span></p>
+      <a class="cta" href="#contact">お問い合わせ・無料相談（初回30分）</a>
+    </div>
+  </div>
+
+  <div class="who">
+    <div class="wrap in">
+      <div class="ph" role="img" aria-label="赤塚 裕人"></div>
+      <div>
+        <p class="nm">技術の責任者　赤塚 裕人（株式会社アト 代表取締役）</p>
+        <p class="ln">博士（情報理工学・東京大学）／京都橘大学 准教授（2027年4月就任予定。現在は同大学の客員研究員・非常勤講師）／国の経済安全保障プログラム（K Program）に参画／文部科学大臣表彰（科学技術分野）ほか受賞多数／元NTTドコモ：リアルタイム版モバイル空間統計・AI渋滞予知の研究開発・事業化・社会実装を主導</p>
+      </div>
+    </div>
+  </div>
+
+  <section id="services" class="sec-soft">
+    <div class="wrap">
+      <h2>支援内容と進め方</h2>
+      <p class="sec-lead">3つの技術の領域を、ご状況に合った進め方でお受けします。</p>
+      <div class="mx-legend">
+        <div><p class="t">プロジェクト型（業務委託）</p>テーマがあり、期間と成果物を決めて進めたい場合に。<span class="w2"><strong>担当する範囲</strong>：課題とデータの整理から、手法の設計、データでの検証、試作・システムへの組み込みまで、技術の責任者としてお受けします。</span><span class="w2"><strong>進め方</strong>：最初に、何が分かれば成功かと、成果物・スケジュールを決定します。週1回を目安に進捗をご報告し、打合せで方向を確かめながら進めます。</span><span class="w2"><strong>成果物</strong>：手法の設計書・検証結果報告書・検証用コードなど、ご依頼に合わせて決定し、技術と考え方を御社に残します。</span></div>
+        <div><p class="t">顧問型（月額の技術顧問）</p><strong>技術の相談</strong>：取り組みたいことが複数あり、状況に合わせて相談しながら進めたい場合に。月に数回の打合せと、メールでご相談をお受けします。<span class="w2"><strong>プロジェクトへの助言</strong>：御社が主体で進めるプロジェクトに、技術の助言役として加わります。毎週の定例の打合せ等で進捗を確認し、議論します。</span><span class="w2"><strong>若手技術者の育成</strong>：プロジェクトを担当する若手技術者の方に、週1〜2回を目安に進捗確認・助言をしながら、主体的にプロジェクトを進められるように育成します。</span></div>
+      </div>
+      <table class="mx">
+        <thead>
+          <tr>
+            <th class="corner"></th>
+            <th>プロジェクト型（業務委託）<span class="w">テーマがあり、期間と成果物を決めて進めたい場合に。<span class="w2"><strong>担当する範囲</strong>：課題とデータの整理から、手法の設計、データでの検証、試作・システムへの組み込みまで、技術の責任者としてお受けします。</span><span class="w2"><strong>進め方</strong>：最初に、何が分かれば成功かと、成果物・スケジュールを決定します。週1回を目安に進捗をご報告し、打合せで方向を確かめながら進めます。</span><span class="w2"><strong>成果物</strong>：手法の設計書・検証結果報告書・検証用コードなど、ご依頼に合わせて決定し、技術と考え方を御社に残します。</span></span></th>
+            <th>顧問型（月額の技術顧問）<span class="w"><strong>技術の相談</strong>：取り組みたいことが複数あり、状況に合わせて相談しながら進めたい場合に。月に数回の打合せと、メールでご相談をお受けします。<span class="w2"><strong>プロジェクトへの助言</strong>：御社が主体で進めるプロジェクトに、技術の助言役として加わります。毎週の定例の打合せ等で進捗を確認し、議論します。</span><span class="w2"><strong>若手技術者の育成</strong>：プロジェクトを担当する若手技術者の方に、週1〜2回を目安に進捗確認・助言をしながら、主体的にプロジェクトを進められるように育成します。</span></span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">AI・データ技術の研究開発<span class="w">予測・分析のモデルをつくる</span></th>
+            <td data-label="プロジェクト型（業務委託）">機械学習のモデルを使った予測（需要・混雑・交通など）や、データ分析の手法を設計し、精度を検証したうえで、システムへの組み込み・試作・試験まで進めます。精度だけでなく、事業として使えるか（効果・費用・運用）を判断の基準に置き、試行（PoC）で終わらせずに事業化までつなげます。</td>
+            <td data-label="顧問型（月額の技術顧問）">AIを使う技術方針の相談、モデルの精度の評価、ベンダーの製品や開発の提案の技術査定（必要性・技術的な筋・金額と期間の妥当性）※をお受けします。</td>
+          </tr>
+          <tr>
+            <th scope="row">プライバシー保護<span class="w">個人のデータを守りながら使う</span></th>
+            <td data-label="プロジェクト型（業務委託）">差分プライバシー・連合学習などを使って、個人のデータを守りながら統計やAIモデルを作る仕組みや、会社をまたいでデータをつなぐ仕組みを設計・検証します。誰の手元で何が見えるかを整理し、守りの強さを数字でお示しします。</td>
+            <td data-label="顧問型（月額の技術顧問）">データ連携やAI開発の計画での守り方の相談、ベンダーやパートナーが提案するプライバシー保護技術の評価をお受けします。改正個人情報保護法（2026年7月公布）の「統計作成等の特例」を見据えた検討もご一緒します。</td>
+          </tr>
+          <tr>
+            <th scope="row">生成AIの活用と統制<span class="w">活用を進めながら、事故を防ぐ</span></th>
+            <td data-label="プロジェクト型（業務委託）">AIの導入を前提にせず、まず何を解くかを決めます。業務の課題を整理し、効果を何で測るかを定めたうえで、どの業務にどう使うかを設計し、試行で効果を確かめます。現場で使われ続け、効果が続く“入れて終わりにしない”仕組みを実現します。あわせて、使ってよい情報の線引きや利用規程に盛り込むべき点を整理して、規程を固めるためのたたき台をご用意し、お使いのAIサービスの設定やデータの扱いを確かめて、足りないところへの対策に優先順位を付けます。</td>
+            <td data-label="顧問型（月額の技術顧問）">活用を広げながら統制を効かせ続けるための相談相手として、次に取り組む業務の検討、新しいツールの導入の判断、ベンダーの「セキュリティ対応済み」という説明の評価、監査・取引先からの問い合わせへの備えなどを継続してお受けします。経営層・管理職向けの研修もお受けします（<a href="ai-briefing/">研修の詳細</a>）。</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="keep">
+        <p class="t">技術を御社に残し、若手技術者を育てます</p>
+        <p class="d">プロジェクト型では、手法の設計書・検証結果の報告書・検証用のコードとして、技術と考え方を御社に残します。さらに、ご希望に応じて、御社の若手技術者と一緒に手を動かしながら進め（OJT）、その後の検討・検証を社内で続けられるよう育成します。</p>
+      </div>
+      <p class="mx-note">※ベンダーの提案の技術査定は、顧問型のほかに、1件ごとの単発でもお受けします。</p>
+      <p class="mx-note">プロジェクト型の成果物は、手法の設計書・検証結果の報告書・検証用のコードなど、ご依頼に合わせて決定します。契約・秘密保持・請求まで、株式会社アトが法人として対応します。</p>
+    </div>
+  </section>
+
+  <section id="examples">
+    <div class="wrap">
+      <h2>ご依頼のイメージ</h2>
+      <div class="cards">
+        <div class="card">
+          <p class="tag">AI・データ技術の研究開発 ｜ プロジェクト型</p>
+          <p class="q">自社で作った需要予測のモデルの精度が、頭打ちになっている</p>
+          <p class="a">今のモデルとデータを拝見し、精度が伸びない原因を、データ・手法・評価の仕方に切り分けます。改善した手法を設計・検証し、報告書と検証用のコードをお渡しします。システムへの組み込みまで続けてお受けすることもできます。</p>
+        </div>
+        <div class="card">
+          <p class="tag">AI・データ技術の研究開発 ｜ 顧問型（技術査定）※単発でも可</p>
+          <p class="q">ベンダーからAI開発の提案と見積を受けたが、妥当か判断できない</p>
+          <p class="a">提案書と見積を拝見し、技術的に筋が通っているか、本当に必要な機能か、金額と期間が見合うかを、売る側に立たずに評価してお伝えします。必要に応じて、ベンダーとの打合せにも同席します。</p>
+        </div>
+        <div class="card">
+          <p class="tag">プライバシー保護 ｜ プロジェクト型</p>
+          <p class="q">自社の会員データを他社のデータと掛け合わせて分析したいが、個人のデータの守り方が決まらない</p>
+          <p class="a">どの会社の手元で何が見え、何と結び付けられるかを整理したうえで、差分プライバシーなどを使った守り方を設計します。守りの強さを数字でお示しし、設計書と検証の結果をお渡しします。</p>
+        </div>
+        <div class="card">
+          <p class="tag">AI・データ技術の研究開発 ｜ 顧問型（若手技術者の育成）</p>
+          <p class="q">若手にAIの技術検証を任せたいが、社内に指導できる人がいない</p>
+          <p class="a">若手技術者の方が御社のテーマとデータで検証を進め、当社が週1〜2回を目安に進捗を確認して助言します。何と比べ、どの指標で、どこまでなら使えると判断するかを実際の検証の中で身に付け、主体的にプロジェクトを進められるように育成します。</p>
+        </div>
+        <div class="card">
+          <p class="tag">生成AIの活用と統制 ｜ プロジェクト型</p>
+          <p class="q">生成AIのツールを全社に導入したが、一部の社員しか使っておらず、効果が見えない</p>
+          <p class="a">どの業務の何を改善したいかを整理し、効果を何で測るかを定めたうえで、使う業務と使い方を設計し、試行で効果を確かめます。導入して終わりにせず、現場で使われ続け、効果が続く仕組みまでご一緒します。</p>
+        </div>
+        <div class="card">
+          <p class="tag">生成AIの活用と統制 ｜ プロジェクト型から顧問型へ</p>
+          <p class="q">全社で生成AIを使わせたいが、使ってよい情報の線引きが決まっていない</p>
+          <p class="a">どの業務にどう使うかを踏まえて、使ってよい情報の線引きと、利用規程に盛り込むべき点を整理して、法務・情報システムのご担当者が規程を固められるよう、たたき台をご用意します。運用が始まった後は、月に数回の打合せで、新しいツールの判断や社内からの問い合わせへの対応をご一緒します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="strengths" class="sec-soft">
+    <div class="wrap">
+      <h2>アトの強み</h2>
+      <div class="why">
+        <div>
+          <p class="t"><span class="n">01</span>研究で終わらせず、事業化・社会実装まで通してきた</p>
+          <p class="d">NTTドコモで、リアルタイム版モバイル空間統計とAI渋滞予知を、研究開発から事業化・社会実装まで主導してきました。PoC（試行）で止めず、実際の運用に乗る形まで考えて進めます。</p>
+        </div>
+        <div>
+          <p class="t"><span class="n">02</span>AIの活用と、プライバシーの守りを一緒に設計できる</p>
+          <p class="d">AIの研究開発に加えて、差分プライバシーなど、個人のデータを守りながら使う技術を専門としています。国の経済安全保障プログラム（K Program）にも参画しています。データを使うことと守ることを、同じ人が一緒に考えます。</p>
+        </div>
+        <div>
+          <p class="t"><span class="n">03</span>技術の責任者が直接担当し、技術を御社に残す</p>
+          <p class="d">ご相談の場に出る者と、実際に担当する者が同じです。代表の赤塚が技術の責任者として、最初から最後まで担当します。NTTドコモで現場主任・課長として若手を育てた経験を持ち、現在は大学で研究・教育に携わっています。報告書等によるノウハウ移管はもちろん、ご希望に応じて、御社の若手技術者と一緒に進めながら育成し、終わった後も社内で検証・改善を続けられるようにします。</p>
+        </div>
+        <div>
+          <p class="t"><span class="n">04</span>製品もライセンスも販売しない</p>
+          <p class="d">AIツールやセキュリティ製品を販売せず、ベンダーから仲介料・紹介料も受け取りません。だから、今ある仕組みで足りるところは足りる、今は入れなくてよいものは入れなくてよい、とそのままお伝えできます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="profile">
+    <div class="wrap">
+      <h2>技術の責任者は、代表の赤塚 裕人です</h2>
+      <div class="profile">
+        <div class="headshot" role="img" aria-label="赤塚 裕人"></div>
+        <ul class="cred">
+          <li><strong>博士（情報理工学・東京大学）</strong></li>
+          <li><strong>専門：</strong>AI・データ技術の研究開発と社会実装。特に、個人のデータを守りながら使う技術<span class="nw">（プライバシー保護）</span></li>
+          <li><strong>京都橘大学 准教授</strong>（2027年4月就任予定。現在は同大学の客員研究員・非常勤講師）</li>
+          <li><strong>元NTTドコモ（2013–2025）</strong>：リアルタイム版モバイル空間統計・AI渋滞予知の研究開発・事業化・社会実装を主導</li>
+          <li><strong>文部科学大臣表彰（科学技術分野）</strong> ／ 前島密賞 ／ 情報処理学会 業績賞</li>
+          <li><strong>国の経済安全保障プログラム「経済安全保障重要技術育成プログラム（K Program）」に参画</strong>（内閣府・文部科学省・経済産業省所管）　<a href="https://www.sdc4society.org/member/" target="_blank" rel="noopener">参画者一覧</a></li>
+          <li>査読論文・登録特許 多数 ／ 日本経済新聞・毎日新聞・BBC World News・テレビ東京 ワールドビジネスサテライト等で報道</li>
+          <li class="sum">＝研究で終わらせず、事業化・社会実装まで通した実績</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="partners" class="sec-soft">
+    <div class="wrap">
+      <h2>SIer・コンサルティング会社・シンクタンクの方へ</h2>
+      <p>上の3つの領域のどれでも、官公庁・大企業案件に技術専門家として次の形で参画できます。</p>
+      <div class="svc">
+        <div class="item">
+          <p class="t">提案参画</p>
+          <p class="d">配置予定技術者としての掲載、提案書の技術方針レビュー。</p>
+        </div>
+        <div class="item">
+          <p class="t">技術監修</p>
+          <p class="d">受注後の技術方針・アルゴリズム・品質の監督。</p>
+        </div>
+        <div class="item">
+          <p class="t">再委託</p>
+          <p class="d">特定の分析・モデル開発タスクを株式会社アトが法人として受託。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="flow">
+    <div class="wrap">
+      <h2>ご依頼の流れ</h2>
+      <div class="flow-wrap">
+        <div>
+          <h3>ご相談から開始まで</h3>
+          <ol class="flow">
+            <li><p class="t">フォームからご相談</p><p class="d">2営業日以内にご返信し、日程を調整します。</p></li>
+            <li><p class="t">無料相談（初回30分・オンライン）</p><p class="d">ご検討中の課題や案件をうかがい、進め方と契約の形を整理します。お手元にベンダーの提案・見積があれば、見るべき点もお伝えします。</p></li>
+            <li><p class="t">必要に応じて：初期の検討・検証<span class="nw">（2〜4週間）</span></p><p class="d">本格的に進める前に、まず小さく、データと手法で見込みを確かめる検討・検証を進めます。その結果をもとに、本格的なご提案・お見積をお出しします。</p></li>
+            <li><p class="t">ご提案・お見積</p><p class="d">範囲・成果物・期間・金額をまとめてお出しします。</p></li>
+            <li><p class="t">秘密保持契約・ご契約</p><p class="d">取引先登録や、委託先としての情報管理体制の審査にも対応します。</p></li>
+            <li><p class="t">開始</p></li>
+          </ol>
+        </div>
+        <div class="after">
+          <h3>始まってからの進め方</h3>
+          <div class="item">
+            <p class="t">プロジェクト型</p>
+            <p class="d">最初に、何が分かれば成功かと、お渡しする成果物・スケジュールを決めます。週1回を目安に進捗をご報告し、打合せで方向を確かめながら進め、最後に報告書や検証用のコードなどをお渡しします。</p>
+          </div>
+          <div class="item">
+            <p class="t">顧問型</p>
+            <p class="d">月に数回の打合せと、メールでのご相談で進めます。議題はその時々の課題に合わせて決め、社内の検討資料やベンダーの提案も一緒に見ます。御社が主体で進めるプロジェクトに加わる場合は、毎週の定例の打合せ等で進捗を確認して議論する、担当の若手技術者の方に週1〜2回を目安に進捗確認・助言するなど、柔軟に対応いたします。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="sec-soft">
+    <div class="wrap">
+      <h2>よくあるご質問</h2>
+      <dl class="faq">
+        <dt>これまでの事例を教えてもらえますか</dt>
+        <dd>守秘義務があるため、お客様の名前やご依頼の中身はお伝えしていません。無料相談で、似た状況の際にどう進めるかを具体的にお話しします。</dd>
+        <dt>取引先登録や、情報管理体制の審査には対応できますか</dt>
+        <dd>対応します。当社は東証プライム上場企業のグループ会社と複数の取引があり、取引先登録や、委託先としての情報管理体制の審査（評価基準への回答、確認書、誓約書など）に必要なことを熟知し、これまでに何度も対応してきました。</dd>
+        <dt>秘密保持契約は結べますか</dt>
+        <dd>はい。ご相談の内容に応じて、必要なタイミングで締結します。</dd>
+        <dt>遠方からでも依頼できますか</dt>
+        <dd>打合せはオンラインで行い、全国からご依頼をお受けしています。必要に応じて、現地にも伺います。</dd>
+        <dt>費用はどのくらいかかりますか</dt>
+        <dd>目安は次のとおりです（いずれも税別）。
+          <ul class="fee">
+            <li>プロジェクト型：3か月の技術検証で600万円から</li>
+            <li>初期の検討・検証（2〜4週間）：100万円から</li>
+            <li>顧問型・技術の相談（月に数回）：月30万円から</li>
+            <li>顧問型・御社が主体で進めるプロジェクトへの助言：月60万円から</li>
+            <li>顧問型・若手技術者の育成：1名につき月50万円から</li>
+            <li>技術査定（単発）：1件50万円から</li>
+            <li>経営層・管理職向けの研修：2時間・50万円から（<a href="ai-briefing/">研修の詳細</a>）</li>
+          </ul>
+          内容・期間・成果物をうかがって、お見積をお出しします。</dd>
+        <dt>京都橘大学の准教授に就任した後も、依頼できますか</dt>
+        <dd>はい。就任後も、株式会社アトとしてお受けします。</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="company">
+    <div class="wrap">
+      <h2>会社概要</h2>
+      <table class="company">
+        <tr><th>社名</th><td>株式会社アト（Ato Inc.）</td></tr>
+        <tr><th>代表者</th><td>代表取締役　赤塚 裕人</td></tr>
+        <tr><th>設立</th><td>2025年8月</td></tr>
+        <tr><th>所在地</th><td>〒600-8208　京都府京都市下京区小稲荷町 85-2　Grand-K 京都駅前ビル 201</td></tr>
+        <tr><th>事業内容</th><td>AI・データ技術（プライバシー保護技術を含む）の研究開発・技術検証の受託／AI活用・統制の技術顧問</td></tr>
+        <tr><th>連絡先</th><td><a href="#contact">お問い合わせフォーム</a></td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="contact" class="sec-soft">
+    <div class="wrap contact">
+      <h2>お問い合わせ・無料相談（初回30分・オンライン）</h2>
+      <p>業務委託・再委託のご相談、技術検証のご依頼、プライバシー保護技術やAI活用のご相談など、下記フォームからご連絡ください（<strong>2営業日以内</strong>にご返信します）。<strong>初回30分のオンライン相談は無料です。</strong></p>
+      <strong>この30分でお話しすることの例</strong>：
+      <ul class="sit" style="margin:0 0 22px">
+        <li>ご検討中の技術課題・案件の概要をうかがい、<strong>進め方と契約の形を整理します。</strong></li>
+        <li>お手元のベンダー提案・見積があれば、見るべき点をお伝えします。</li>
+        <li>弊社は製品もライセンスも販売していないため、特定のツールをお勧めすることはありません。</li>
+      </ul>
+      <p class="small">個人情報の取扱いは<a href="privacy.html">個人情報保護方針</a>をご覧ください。</p>
+      <div class="form-embed">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdoWGJpNNHRiP2pkGjrFq95xTIB309OFkMzCyQO3bqQtxxP5Q/viewform?embedded=true" title="お問い合わせフォーム" loading="lazy">読み込んでいます…</iframe>
+      </div>
+      <p class="form-fallback">フォームがうまく表示されない場合は、<a href="https://docs.google.com/forms/d/e/1FAIpQLSdoWGJpNNHRiP2pkGjrFq95xTIB309OFkMzCyQO3bqQtxxP5Q/viewform" target="_blank" rel="noopener">こちらのフォーム</a>からご入力ください。</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="small"><a href="privacy.html">個人情報保護方針</a></p>
+    <p class="small">「モバイル空間統計」は株式会社NTTドコモの登録商標です。</p>
+    <p class="small">© 2026 株式会社アト（Ato Inc.）</p>
+  </div>
+</footer>
+
+</body>
+</html>
