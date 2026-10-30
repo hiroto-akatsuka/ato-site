@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI・データのプロジェクトを推進する若手の育成（OJT型）｜株式会社アト</title>
+<meta name="description" content="AIプロジェクトを主体的に推進できる人材を、育成できていますか。何をゴールとし、どんな仮説を立て、何から進めるか。結果を見て次の一手を決め、社内外の状況変化に臨機応変に対応しながら成果につなげる若手を、貴社の実際のプロジェクトの中で育てます。研究開発から事業化・社会実装までを主導してきた代表が直接指導します。">
+<meta property="og:title" content="AI・データのプロジェクトを推進する若手の育成（OJT型）｜株式会社アト">
+<meta property="og:description" content="AIプロジェクトを主体的に推進できる人材を、育成できていますか。結果を見て次の一手を決め、社内外の状況変化に臨機応変に対応しながら成果につなげる若手を、貴社の実際のプロジェクトの中で育てます。技術の責任者である代表が直接指導します。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://atoinc.jp/ai-project-lead/">
+<meta property="og:locale" content="ja_JP">
+<link rel="canonical" href="https://atoinc.jp/ai-project-lead/">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18364059187"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','AW-18364059187');
+</script>
+<style>
+  :root{
+    --ink:#1a1f29; --navy:#1b2c4b; --muted:#5b6472;
+    --line:#e3e6ec; --bg:#ffffff; --bg-soft:#f6f7f9; --gold:#b08d4f;
+    --serif:"Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif JP",serif;
+    --sans:"Yu Gothic","YuGothic","Hiragino Kaku Gothic ProN","Noto Sans JP","Meiryo",sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;color:var(--ink);background:var(--bg);font-family:var(--sans);
+       line-height:1.8;font-size:16px;-webkit-font-smoothing:antialiased;}
+  a{color:var(--navy);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
+
+  header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);
+         backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;
+       padding:14px 24px;max-width:960px;margin:0 auto;gap:16px;flex-wrap:wrap}
+  .brand{font-family:var(--serif);font-size:18px;letter-spacing:.06em;color:var(--ink);font-weight:600}
+  .nav .cta-mini{background:var(--navy);color:#fff;padding:8px 18px;border-radius:6px;font-size:13.5px}
+  .nav .cta-mini:hover{text-decoration:none;opacity:.92}
+
+  .hero{padding:68px 0 40px}
+  .kicker{font-size:13px;letter-spacing:.18em;color:var(--gold);font-weight:600;margin:0 0 18px}
+  .hero h1{font-family:var(--serif);font-size:clamp(27px,5.2vw,42px);line-height:1.4;
+           margin:0 0 22px;font-weight:600;letter-spacing:.02em}
+  .nb{display:inline-block}
+  .lead{font-size:clamp(15.5px,2.3vw,18px);color:var(--ink);max-width:800px;margin:0}
+  .lead .sub{display:block;margin-top:14px;font-size:15.5px}
+  .lead .sub strong{color:var(--navy)}
+  .cta{margin-top:30px;display:inline-block;background:var(--navy);color:#fff;
+       padding:14px 30px;border-radius:6px;font-size:15.5px;letter-spacing:.04em}
+  .cta:hover{text-decoration:none;opacity:.92}
+  .cta-note{margin-top:10px;font-size:13px;color:var(--muted)}
+
+  .who{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-soft)}
+  .who .in{display:grid;grid-template-columns:96px 1fr;gap:20px;align-items:center;padding-top:22px;padding-bottom:22px}
+  .who .ph{width:96px;height:115px;border-radius:6px;background:#e9ecf1 center/cover no-repeat;
+           background-image:url('../profile.jpg');border:1px solid var(--line)}
+  .who .nm{font-weight:700;margin:0 0 4px}
+  .who .ln{margin:0;font-size:14.5px}
+
+  section{padding:58px 0;border-bottom:1px solid var(--line)}
+  .sec-soft{background:var(--bg-soft)}
+  h2{font-family:var(--serif);font-size:24px;font-weight:600;margin:0 0 26px;
+     letter-spacing:.04em;position:relative;padding-bottom:12px}
+  h2::after{content:"";position:absolute;left:0;bottom:0;width:46px;height:2px;background:var(--gold)}
+  p.body{margin:0 0 16px}
+
+  .sit{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+  .sit li{position:relative;padding-left:30px}
+  .sit li::before{content:"✓";position:absolute;left:2px;top:0;color:var(--navy);font-weight:700}
+
+  .msg{font-family:var(--serif);font-size:clamp(19px,3vw,23px);color:var(--navy);font-weight:600;line-height:1.6;margin:0 0 20px}
+
+  .goal{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 28px;list-style:none;padding:0;margin:0}
+  .goal li{background:#fff;border:1px solid var(--line);border-left:3px solid var(--navy);border-radius:6px;padding:14px 18px;font-size:15px}
+
+  table.mx{width:100%;border-collapse:collapse;background:#fff;font-size:15px;table-layout:fixed}
+  table.mx th,table.mx td{border:1px solid var(--line);padding:16px 18px;vertical-align:top;text-align:left}
+  table.mx thead th{background:var(--navy);color:#fff;font-weight:700;font-size:16px}
+  table.mx thead th .w{display:block;font-weight:400;font-size:13.5px;opacity:.9;margin-top:4px;line-height:1.6}
+  table.mx thead th.corner{background:var(--bg-soft);width:140px}
+  table.mx tbody th{width:140px;color:var(--navy);font-weight:700;background:#fbfbfc}
+  .mx-note{margin:14px 0 0;font-size:15px}
+
+  .pricelist{list-style:none;padding:0;margin:0;display:grid;gap:10px;font-size:15.5px}
+  .pricelist li{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);padding:0 0 10px}
+  .pricelist .p{font-weight:700;color:var(--navy);white-space:nowrap}
+
+  details.more{margin-top:22px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:0 20px}
+  details.more summary{cursor:pointer;padding:14px 0;font-weight:700;color:var(--navy);font-size:15px}
+  details.more .pricebox{padding:4px 0 20px}
+  .pricebox .block-t{font-weight:700;margin:20px 0 8px}
+  .pricebox .block-t:first-child{margin-top:4px}
+  ul.incl{margin:0;padding-left:20px;font-size:15px;display:grid;gap:6px}
+  .pricebox .n{font-size:14.5px;color:var(--ink);margin:10px 0 0}
+
+  .why{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 40px}
+  .why .t{font-family:var(--serif);font-size:18.5px;font-weight:600;color:var(--navy);margin:0 0 8px}
+  .why .t .n{color:var(--gold);margin-right:10px}
+  .why .d{margin:0;font-size:15px}
+
+  .profile{display:grid;grid-template-columns:200px 1fr;gap:32px;align-items:center}
+  .headshot{width:200px;height:240px;border-radius:8px;background:#e9ecf1 center/cover no-repeat;
+            background-image:url('../profile.jpg');border:1px solid var(--line)}
+  .cred{list-style:none;padding:0;margin:0;display:grid;gap:13px;font-size:15px}
+  .cred li{padding-left:20px;position:relative}
+  .cred li::before{content:"—";position:absolute;left:0;color:var(--gold)}
+
+  ol.flow{list-style:none;counter-reset:f;padding:0;margin:0;display:grid;gap:14px}
+  ol.flow li{counter-increment:f;position:relative;padding-left:46px}
+  ol.flow li::before{content:counter(f);position:absolute;left:0;top:2px;width:30px;height:30px;
+       border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;
+       justify-content:center;font-weight:700;font-size:14px}
+  ol.flow .t{font-weight:700;margin:0}
+  ol.flow .d{color:var(--ink);margin:0;font-size:15px}
+
+  .faq dt{font-weight:700;margin:24px 0 6px}
+  .faq dt:first-child{margin-top:0}
+  .faq dd{margin:0;font-size:15px}
+
+  .contact p{margin:0 0 18px;color:var(--ink)}
+  .contact p.small{color:var(--muted)}
+
+  .form-embed iframe{width:100%;height:1760px;border:0;display:block}
+  .form-fallback{font-size:13.5px;color:var(--muted);margin-top:16px}
+
+  footer{padding:34px 0;text-align:center;color:var(--muted);font-size:13px}
+  .small{font-size:13px;color:var(--muted)}
+
+  @media(max-width:760px){ .goal,.why{grid-template-columns:1fr} }
+  @media(max-width:640px){
+    .who .in{grid-template-columns:72px 1fr}
+    .who .ph{width:72px;height:86px}
+    .profile{grid-template-columns:1fr;justify-items:start}
+    .headshot{width:120px;height:144px}
+    .hero{padding:48px 0 32px}
+    .hero h1{font-size:min(27px,calc((100vw - 48px) / 13.2))}
+    section{padding:44px 0}
+    .pricelist li{flex-direction:column;gap:2px}
+    .form-embed iframe{height:2300px}
+    table.mx,table.mx tbody,table.mx tr,table.mx th,table.mx td{display:block;width:100%}
+    table.mx thead{display:none}
+    table.mx tr{margin:0 0 14px;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+    table.mx th,table.mx td{border:0;border-top:1px solid var(--line)}
+    table.mx tbody th{border-top:0;width:100%}
+    table.mx td::before{content:attr(data-label);display:block;font-weight:700;color:var(--navy);font-size:13px;margin-bottom:2px}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a class="brand" href="https://atoinc.jp/">株式会社アト</a>
+    <a class="cta-mini" href="#contact">相談する</a>
+  </div>
+</header>
+
+<main>
+
+  <div class="hero">
+    <div class="wrap">
+      <p class="kicker">AI・データのプロジェクトを推進する若手の育成（OJT型）</p>
+      <h1><span class="nb">AIプロジェクトを</span><span class="nb">主体的に推進できる人材を</span><br><span class="nb">育成できていますか？</span></h1>
+      <p class="lead">何をゴールとし、どんな仮説を立て、何から進めるか。<br>
+      結果を見て次の一手を決め、社内外の状況変化に臨機応変に対応しながら成果につなげる。<br>
+      AI・データのプロジェクトを推進できる若手を、貴社の実際のプロジェクトの中で育てます。
+      <span class="sub">研究開発から事業化・社会実装までを主導してきた<strong>技術の責任者である代表が、直接指導します。</strong></span></p>
+      <a class="cta" href="#contact">相談する（初回30分・無料）</a>
+      <p class="cta-note">2営業日以内にご連絡いたします。</p>
+    </div>
+  </div>
+
+  <div class="who">
+    <div class="wrap in">
+      <div class="ph" role="img" aria-label="赤塚 裕人"></div>
+      <div>
+        <p class="nm">担当　赤塚 裕人（株式会社アト 代表取締役）</p>
+        <p class="ln">博士（情報理工学・東京大学）／京都橘大学 准教授（2027年4月就任予定。現在は同大学の客員研究員・非常勤講師）／国の経済安全保障プログラム（K Program）に参画／文部科学大臣表彰（科学技術分野）ほか受賞多数／元NTTドコモ：リアルタイム版モバイル空間統計・AI渋滞予知の研究開発・事業化・社会実装を主導し、現場主任・課長として若手を育成</p>
+      </div>
+    </div>
+  </div>
+
+  <section id="pains">
+    <div class="wrap">
+      <h2>こんな状態ではありませんか</h2>
+      <ul class="sit">
+        <li>AIやデータの活用を進めたいが、<strong>プロジェクトを任せられる人材が社内にいない</strong></li>
+        <li>若手にプロジェクトを任せたいが、<strong>社内に指導できる人がいない</strong></li>
+        <li>若手に研修を受けさせたが、<strong>自社のプロジェクトを任せられるところまで育っていない</strong></li>
+        <li>若手に任せたプロジェクトが、<strong>関係部署や経営層を巻き込めず、前に進まない</strong></li>
+        <li>ツールの導入や試行（PoC）はしたが、<strong>成果につながらないまま止まっている</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="why" class="sec-soft">
+    <div class="wrap">
+      <h2>講座だけでは、プロジェクトを推進できる若手は育ちません</h2>
+      <p class="msg">プロジェクトを推進する力は、実際のプロジェクトの中で身に付きます。</p>
+      <p class="body">講座やeラーニングで、AIやデータ分析の知識は学べます。しかし、自社のプロジェクトで成果を左右するのは、ゴールを示して関係者の合意を得る、仮説を立てて計画に落とし込む、思うような結果が出なかった際に立て直す、状況の変化に応じて関係部署や経営層、ベンダーと調整する、といった力です。こうした力は、経験者と一緒に実際のプロジェクトを進めながらでなければ身に付きません。</p>
+      <p class="body" style="margin:0">当社が、その経験者の役割を担います。貴社の実際のプロジェクトを題材に、ゴールの示し方から関係者との合意、結果を受けた次の一手まで、当社が場面ごとに若手の方を指導し、自ら考えて動けるところまで育てます。</p>
+    </div>
+  </section>
+
+  <section id="goal">
+    <div class="wrap">
+      <h2>3か月後、若手の方ができるようになること</h2>
+      <ul class="goal">
+        <li>プロジェクトのゴールを示し、<strong>上長や関係部署と合意できる</strong></li>
+        <li>AIやデータで何ができるかを踏まえて仮説と計画を立て、<strong>社内の承認を得られる</strong></li>
+        <li>結果をもとに次の一手を考え、<strong>上長に提案して判断を得られる</strong></li>
+        <li>状況の変化に応じて、<strong>関係部署やベンダーと調整し、計画を立て直せる</strong></li>
+        <li>成果と次の段階を経営層に説明し、<strong>次の予算や体制につなげられる</strong></li>
+      </ul>
+      <p class="small" style="margin-top:14px">事業部門・DX推進・情報システム・研究開発など、部門を問わず、AI・データのプロジェクトを担当する若手の方、将来の中核として期待する若手の方を対象としています。プログラムを書いた経験は問いません。プロジェクトに必要な技術の要点は、その都度お伝えします。</p>
+    </div>
+  </section>
+
+  <section id="ways" class="sec-soft">
+    <div class="wrap">
+      <h2>2つの進め方</h2>
+      <table class="mx">
+        <thead>
+          <tr>
+            <th class="corner"></th>
+            <th>若手の育成<span class="w">プロジェクトは若手の方に任せ、推進できるように育てたい場合に。</span></th>
+            <th>プロジェクト型＋育成<span class="w">プロジェクトは当社に任せ、その中で若手の方を育てたい場合に。</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>ポイント</th>
+            <td data-label="若手の育成">プロジェクトを進めるのは、貴社の若手の方です。当社は指導役として、若手の方が自らプロジェクトを推進できるようになるまで支えます。</td>
+            <td data-label="プロジェクト型＋育成">プロジェクトを進めるのは、当社です。若手の方は当社と一緒にプロジェクトに加わり、当社の進め方を間近で見ながら、その一部を担当します。</td>
+          </tr>
+          <tr>
+            <th>当社が行うこと</th>
+            <td data-label="若手の育成">週1〜2回を目安に若手の方と打合せを行い、進み具合を確認して、次に何をするかを一緒に考えます。関係者との合意の取り方や、社内への説明・報告の準備も、その都度助言します。節目ごとに、上長の方に進み具合をご報告します。</td>
+            <td data-label="プロジェクト型＋育成">計画から報告までを、技術の責任者として担当します。若手の方には、関係者との打合せや社内への報告の一部を担当していただき、当社がなぜそう判断したのかを、その都度ご説明します。</td>
+          </tr>
+          <tr>
+            <th>期間・人数</th>
+            <td data-label="若手の育成">3か月を標準とします。若手の方1名からお受けします。</td>
+            <td data-label="プロジェクト型＋育成">3か月・プロジェクト1件・若手の方1名を標準とします。2名以上の場合は、人数に応じて料金が変わります。</td>
+          </tr>
+          <tr>
+            <th>貴社に残るもの</th>
+            <td data-label="若手の育成">若手の方が作成した計画と報告資料、開始時と終了時の到達度の評価、次の段階の計画</td>
+            <td data-label="プロジェクト型＋育成">ご依頼に合わせて決定する成果物（報告書など）、次の段階の計画、若手の方の所見</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="price">
+    <div class="wrap">
+      <h2>費用の目安（税別）</h2>
+      <ul class="pricelist">
+        <li><span>若手の育成</span><span class="p">1名につき月80万円から</span></li>
+        <li><span>プロジェクト型＋育成（3か月・若手の方1名）</span><span class="p">600万円から</span></li>
+      </ul>
+      <p class="small" style="margin-top:14px">若手の育成を3か月・1名で行う場合は、240万円からとなります。プロジェクト型＋育成の料金には、若手の方1名の育成を含みます。2名以上の場合は、人数に応じて料金が変わります。いずれも、内容・期間・人数を伺ったうえで、お見積をお出しします。</p>
+
+      <details class="more">
+        <summary>若手の育成の料金に含まれるもの</summary>
+        <div class="pricebox">
+          <ul class="incl">
+            <li>開始時に、プロジェクトのゴールと、若手の方が何をできるようになれば成功かを、上長の方と一緒に決定</li>
+            <li>週1〜2回を目安とした若手の方との打合せ（オンライン）と、メールでのご質問への回答</li>
+            <li>若手の方がまとめた検証や分析の結果をもとにした、技術的な議論（結果をどう読み、次に何を確かめるか）</li>
+            <li>計画・社内への説明資料・報告資料の確認と講評</li>
+            <li>上長や経営層への報告の準備への助言（現地での同席はご相談ください）</li>
+            <li>プロジェクトに必要な技術の要点の解説</li>
+            <li>開始時と終了時の、若手の方の到達度の評価（上長の方にお渡しします）</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section id="strengths" class="sec-soft">
+    <div class="wrap">
+      <h2>アトの強み</h2>
+      <div class="why">
+        <div><p class="t"><span class="n">01</span>研究で終わらせず、事業化・社会実装まで通してきた</p><p class="d">NTTドコモで、リアルタイム版モバイル空間統計とAI渋滞予知を、研究開発から事業化・社会実装まで主導しました。試行で終わらせずに成果につなげてきたプロジェクトの進め方を、そのままお伝えします。</p></div>
+        <div><p class="t"><span class="n">02</span>若手を育てた経験を持つ技術の責任者が、直接指導する</p><p class="d">NTTドコモで現場主任・課長として若手を育てた経験を持ち、現在は大学で研究・教育に携わっています。講師のチームではなく、代表の赤塚が直接指導します。</p></div>
+        <div><p class="t"><span class="n">03</span>貴社のプロジェクトが前に進む</p><p class="d">共通の教材ではなく、貴社の実際のプロジェクトで進めます。若手の方が育つと同時に、貴社のプロジェクトが前に進み、次の段階の計画が手元に残ります。</p></div>
+        <div><p class="t"><span class="n">04</span>製品もライセンスも販売しない</p><p class="d">当社はAIツールのライセンスも製品も販売しておりません。プロジェクトを進めた結果、現時点ではAIを使わない方がよいと判断した場合も、そのままお伝えします。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="profile">
+    <div class="wrap">
+      <h2>担当するのは、代表の赤塚 裕人です</h2>
+      <div class="profile">
+        <div class="headshot" role="img" aria-label="赤塚 裕人"></div>
+        <ul class="cred">
+          <li><strong>博士（情報理工学・東京大学）</strong></li>
+          <li><strong>専門：</strong>AI・データ技術の研究開発と社会実装。特に、個人のデータを守りながら使う技術（プライバシー保護）</li>
+          <li><strong>京都橘大学 准教授</strong>（2027年4月就任予定。現在は同大学の客員研究員・非常勤講師）</li>
+          <li><strong>元NTTドコモ（2013–2025）</strong>：リアルタイム版モバイル空間統計・AI渋滞予知の研究開発・事業化・社会実装を主導</li>
+          <li><strong>文部科学大臣表彰（科学技術分野）</strong> ／ 前島密賞 ／ 情報処理学会 業績賞</li>
+          <li><strong>国の経済安全保障プログラム「経済安全保障重要技術育成プログラム（K Program）」に参画</strong>（内閣府・文部科学省・経済産業省所管）　<a href="https://www.sdc4society.org/member/" target="_blank" rel="noopener">参画者一覧</a></li>
+          <li>査読論文・登録特許 多数 ／ 日本経済新聞・毎日新聞・BBC World News・テレビ東京 ワールドビジネスサテライト等で報道</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="flow" class="sec-soft">
+    <div class="wrap">
+      <h2>ご依頼の流れ</h2>
+      <ol class="flow">
+        <li><p class="t">フォームからご相談</p><p class="d">ご検討の段階からご相談ください。フォームの送信は、お申し込みではありません。2営業日以内にご返信します。</p></li>
+        <li><p class="t">ご要望の確認</p><p class="d">育成の対象となる方の人数とご経験、取り組みたいプロジェクトを伺い、進め方をご提案します。プロジェクトが決まっていない場合は、一緒に候補を検討します。オンラインでの無料相談（初回30分）もご利用いただけます。</p></li>
+        <li><p class="t">ご提案・お見積</p><p class="d">進め方・プロジェクト・期間・人数・金額をまとめてお出しします。</p></li>
+        <li><p class="t">秘密保持契約・ご契約</p><p class="d">取引先登録や、委託先としての情報管理体制の審査にも対応します。</p></li>
+        <li><p class="t">開始</p><p class="d">最初に、プロジェクトのゴールと、若手の方が何をできるようになれば成功かを、上長の方と一緒に決定します。</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2>よくあるご質問</h2>
+      <dl class="faq">
+        <dt>Q. 何名まで対応できますか</dt>
+        <dd>若手の育成は、若手の方1名からお受けし、人数に応じてお見積をお出しします。プロジェクト型＋育成は、若手の方1名を標準とし、2名以上の場合は人数に応じて料金が変わります。</dd>
+
+        <dt>Q. 生成AIを業務に使うプロジェクトでも対象になりますか</dt>
+        <dd>対象になります。生成AIを業務に使うプロジェクト、予測や分析のモデルをつくるプロジェクト、社内外のデータをつないで活用するプロジェクトなど、AI・データに関わるプロジェクトであれば対象です。</dd>
+
+        <dt>Q. 取り組むプロジェクトが決まっていません</dt>
+        <dd>貴社の課題とお持ちのデータを伺い、3か月で次の段階への見通しが立つ規模のプロジェクトを、一緒に選定します。</dd>
+
+        <dt>Q. 社内のデータを使うことになりますが、問題ありませんか</dt>
+        <dd>秘密保持契約を締結してから開始します。データは貴社の環境で扱っていただき、当社は必要な範囲で拝見します。データの扱いの詳細は、案件ごとにご相談のうえ決定します。</dd>
+
+        <dt>Q. 取引先登録や、情報管理体制の審査には対応できますか</dt>
+        <dd>対応します。当社は東証プライム上場企業のグループ会社と複数の取引があり、取引先登録や、委託先としての情報管理体制の審査（評価基準への回答、確認書、誓約書など）に必要なことを熟知し、これまでに何度も対応してきました。</dd>
+
+        <dt>Q. 契約の形や、社内の決裁に通すための仕様書の書き方も相談できますか</dt>
+        <dd>ご相談ください。社内の規程によっては、人材の育成を外部に委託しにくい場合や、請負契約でなければ発注できない場合があります。当社の支援は、貴社のプロジェクトへの技術支援と、それを通じた若手の方の育成を一体で行うものです。その実態に沿って、契約の形態（請負・準委任など）・業務の範囲・成果物を、貴社の規程と決裁の進め方に合わせて整理し、仕様書の書き方もご一緒に検討します。代表はNTTドコモに12年間在籍し、大企業の社内の手続きや決裁の進め方を熟知しています。</dd>
+
+        <dt>Q. 遠方からでも依頼できますか</dt>
+        <dd>打合せと進捗の確認はオンラインで行い、全国からご依頼をお受けしています。上長や経営層への報告など、必要に応じて現地にも伺います。</dd>
+
+        <dt>Q. 京都橘大学の准教授に就任した後も、依頼できますか</dt>
+        <dd>はい。就任後も、株式会社アトとしてお受けします。</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="contact" class="sec-soft">
+    <div class="wrap contact">
+      <h2>ご相談</h2>
+      <p>下記のフォームからご連絡ください。2営業日以内にご返信します。ご検討の段階からご相談ください。フォームの送信は、お申し込みではありません。オンラインでの無料相談（初回30分）もご利用いただけます。</p>
+      <p class="small">個人情報の取扱いは<a href="https://atoinc.jp/privacy.html">個人情報保護方針</a>をご覧ください。</p>
+
+      <div class="form-embed">
+        <iframe id="leadform" src="https://docs.google.com/forms/d/e/1FAIpQLSc1AeAH_6bUi6ZjtqQ-C9qc64_e5QuIscYshCfxdRr-8OdNDw/viewform?embedded=true" title="ご相談フォーム" loading="lazy">読み込んでいます…</iframe>
+      </div>
+      <p class="form-fallback">フォームがうまく表示されない場合は、<a href="https://docs.google.com/forms/d/e/1FAIpQLSc1AeAH_6bUi6ZjtqQ-C9qc64_e5QuIscYshCfxdRr-8OdNDw/viewform" target="_blank" rel="noopener">こちらのフォーム</a>からご入力ください。</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="small"><a href="https://atoinc.jp/privacy.html">個人情報保護方針</a>　｜　<a href="https://atoinc.jp/">会社概要</a></p>
+    <p class="small">「モバイル空間統計」は株式会社NTTドコモの登録商標です。</p>
+    <p class="small">© 2026 株式会社アト（Ato Inc.）</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var n = 0, f = document.getElementById('leadform');
+  if (!f) return;
+  f.addEventListener('load', function(){
+    n++;
+    if (n > 1 && typeof gtag === 'function') {
+      gtag('event', 'conversion', {'send_to': 'AW-18364059187/5GfqCKbswOEcELOc1bRE'});
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
