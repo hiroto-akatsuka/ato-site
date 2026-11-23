@@ -139,6 +139,12 @@
   footer{padding:34px 0;text-align:center;color:var(--muted);font-size:13px}
   .small{font-size:13px;color:var(--muted)}
 
+  ul.news{list-style:none;padding:0;margin:0;border-top:1px solid var(--line);max-width:900px}
+  ul.news li{display:grid;grid-template-columns:120px 1fr;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+  ul.news .d{font-weight:700;color:var(--navy);font-size:14.5px;letter-spacing:.04em}
+  ul.news a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px}
+  ul.news a:hover{text-decoration-color:var(--navy)}
+
   @media(max-width:860px){
     .cards,.why,.flow-wrap,.svc{grid-template-columns:1fr}
   }
@@ -152,6 +158,7 @@
     .hero{padding:60px 0 48px}
     section{padding:52px 0}
     .form-embed iframe{height:1950px}
+    ul.news li{grid-template-columns:1fr;gap:2px}
 
     table.mx,table.mx tbody,table.mx tr,table.mx th,table.mx td{display:block;width:100%}
     table.mx thead{display:none}
@@ -180,6 +187,7 @@
     <nav class="menu">
       <a href="#services">支援内容</a>
       <a href="#strengths">アトの強み</a>
+      <a href="#news">新着情報</a>
       <a href="#flow">ご依頼の流れ</a>
       <a href="#faq">よくあるご質問</a>
       <a href="#company">会社概要</a>
@@ -331,6 +339,16 @@
           <li class="sum">＝研究で終わらせず、事業化・社会実装まで通した実績</li>
         </ul>
       </div>
+    </div>
+  </section>
+
+  <section id="news">
+    <div class="wrap">
+      <h2>新着情報</h2>
+      <ul class="news">
+        <li><span class="d">2026.11.19</span><a href="news/20261119-invention-award.html">令和８年度関東地方発明表彰で「発明奨励賞」を受賞しました</a></li>
+        <li><span class="d">2026.10.22</span><a href="news/20261022-css2026.html">コンピュータセキュリティシンポジウム2026で研究成果を発表しました</a></li>
+      </ul>
     </div>
   </section>
 
